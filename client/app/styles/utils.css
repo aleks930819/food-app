@@ -1,0 +1,20 @@
+.angled-span {
+  transform: skewX(-10deg);
+  display: inline-block;
+}
+
+.rounded-top-left {
+  border-top-left-radius: 0.25rem;
+}
+
+.rounded-top-right {
+  border-top-right-radius: 0.25rem;
+}
+
+.rounded-bottom-left {
+  border-bottom-left-radius: 0.25rem;
+}
+
+.rounded-bottom-right {
+  border-bottom-right-radius: 0.25rem;
+}
