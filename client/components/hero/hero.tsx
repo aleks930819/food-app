@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Hero = () => {
   return (
     <>
-      <div className="relative h-[70vh] w-full ">
+      <div className="relative h-[70vh] w-full z-10">
         <div className="">
           <Image src={background} alt="background" layout="fill" objectFit="cover relative" />
           <span className="absolute top-0 left-0 w-full h-full   liniear-gradient" />
@@ -26,6 +26,7 @@ const Hero = () => {
             </h1>
             <Link
               href="#"
+              aria-label="Shop Now"
               className="bg-primary-light flex items-center text-white font-bold px-6 py-4 rounded-full mt-4 hover:bg-primary-light/95 transition-all duration-300 ease-in-out"
             >
               Shop Now
