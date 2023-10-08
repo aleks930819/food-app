@@ -4,7 +4,7 @@ import { Lexend } from 'next/font/google';
 
 const inter = Lexend({ subsets: ['latin'] });
 
-import Header from '@components/header/header';
+import Header from '@/components/header/header';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',

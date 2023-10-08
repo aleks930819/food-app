@@ -22,7 +22,7 @@ const TopHeaderActionButton = ({
 const TopHeader = () => {
   return (
     <div className="text-gray-500 border text-center py-3 px-2 sm:px-4 lg:px-6">
-      <div className="flex items-center justify-between max-w-4xl mx-auto">
+      <div className="flex items-center justify-between max-w-6xl mx-auto">
         <p>
           Welcome to{' '}
           <span className="bg-primary-light text-white text-lg font-bold px-1 py-0.5 rounded-sm angled-span">

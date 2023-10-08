@@ -2,8 +2,8 @@ import React from 'react';
 
 const Search = () => {
   return (
-    <div className="w-[55%] mx-auto py-4 px-2">
-      <form className="flex  items-center justify-center">
+    <div className="max-w-6xl mx-auto p-4">
+      <form className="flex  mx-auto items-center justify-center">
         <input
           type="text"
           placeholder="Search Product"

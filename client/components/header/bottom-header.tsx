@@ -7,7 +7,7 @@ import Link from 'next/link';
 const BottomHeader = () => {
   return (
     <div className="bg-primary-light w-full">
-      <div className="max-w-4xl flex justify-between items-center mx-auto  px-4 py-4 text-white">
+      <div className="max-w-6xl flex justify-between items-center mx-auto  px-4 py-4 text-white">
         {/* CATEGORIES */}
         <ul>
           <li>
