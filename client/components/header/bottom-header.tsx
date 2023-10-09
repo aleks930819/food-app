@@ -22,6 +22,7 @@ const BottomHeader = () => {
           <ul className="inline-flex justify-center gap-10 items-center ">
             <li className="font-bold">Home</li>
             <li className="font-bold">About Us</li>
+            <li className="font-bold">Our Team</li>
             <li className="font-bold">Products</li>
             <li className="font-bold">News</li>
           </ul>

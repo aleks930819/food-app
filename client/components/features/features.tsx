@@ -1,7 +1,8 @@
-import { Cherry, Bean, Apple, Milk, LeafyGreen } from 'lucide-react';
+import Link from 'next/link';
+
+import { Cherry, Bean, Apple, Milk, LeafyGreen, UtensilsCrossed } from 'lucide-react';
 
 import Grid from '@/components/grid/grid';
-import Link from 'next/link';
 
 interface FeaturesItemProps {
   title: string;
@@ -47,11 +48,15 @@ const Features = () => {
       title: 'Bread & Pastries',
       icon: <Bean size={24} />,
     },
+    {
+      title: 'Breakfast Cereals',
+      icon: <UtensilsCrossed size={24} />,
+    },
   ];
 
   return (
     <section className="max-w-6xl mx-auto mt-[-20px] z-20 relative mb-4">
-      <Grid bigGrid>
+      <Grid gridType="sixColumn">
         {featuresData.map((feature, index) => (
           <FeaturesItem key={index} title={feature.title} icon={feature.icon} />
         ))}

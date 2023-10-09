@@ -22,3 +22,18 @@
 .liniear-gradient {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 1.2) 100%);
 }
+
+.custom-background {
+  background-color: #f0f0f0; /* Replace with your desired background color */
+  color: #76a713; /* Replace with your desired text color */
+  border-radius: 9999px; /* Rounded-full equivalent */
+  padding: 0.75rem; /* Replace with your desired padding */
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.custom-background:hover {
+  background-color: #76a713; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+}
