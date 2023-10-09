@@ -5,6 +5,8 @@ import Grid from '../grid/grid';
 const FeaturedProducts = ({ products }: { products: Product[] | null }) => {
   if (!products) return null;
 
+  const showFourProducts = products.slice(0, 4);
+
   return (
     <div className="mt-10 max-w-6xl mx-auto">
       <div>
@@ -13,12 +15,11 @@ const FeaturedProducts = ({ products }: { products: Product[] | null }) => {
       </div>
       <section className="pt-2   gap-8">
         <Grid gridType="fourColumn">
-          {products.map((product: Product) => (
+          {showFourProducts.map((product: Product) => (
             <ProductCard product={product} />
           ))}
         </Grid>
       </section>
-      <div className="mt-10" />
     </div>
   );
 };

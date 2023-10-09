@@ -5,8 +5,14 @@ export interface Product {
   price: number;
   description: string;
   imageURL: string;
-  tags: string[];
+  categories: Category[];
   reviews: number;
   discount: number;
   quantity: number;
+}
+
+export interface Category {
+  id: number;
+  name: string;
+  slug: string;
 }
