@@ -1,0 +1,16 @@
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 1.8rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 1.4rem !important;
+  height: 0.3rem !important;
+  background: #76a713 !important;
+  position: relative !important;
+  border-radius: 2px !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 2rem !important;
+}

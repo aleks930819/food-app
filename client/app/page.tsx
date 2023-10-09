@@ -3,6 +3,7 @@ import { getProducts } from '@/actions/get-products';
 import FeaturedProducts from '@/components/featured-products/featured-products';
 import Features from '@/components/features/features';
 import Hero from '@/components/hero/hero';
+import OurTeam from '@/components/our-team/our-team';
 import SpecialOffers from '@/components/special-offers/special-offers';
 
 export default async function Home() {
@@ -13,6 +14,7 @@ export default async function Home() {
       <Features />
       <FeaturedProducts products={products} />
       <SpecialOffers />
+      <OurTeam />
     </>
   );
 }

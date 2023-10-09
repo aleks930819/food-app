@@ -20,7 +20,7 @@
 
 button:hover .arrow-icon {
   opacity: 1;
-  transform: translateX(10px);
+  transform: translateX(6px);
 }
 
 .transform-growth:hover {
