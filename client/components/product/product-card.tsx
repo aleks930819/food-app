@@ -3,7 +3,7 @@ import { Eye, Heart, StarHalf, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface ProductCardProps {
+interface ProductCardProps {w
   product: Product;
 }
 
@@ -11,7 +11,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link
       href="#"
-      className="shadow-xl  rounded-md overflow-hidden inline-block relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+      className="shadow-xl max-h-96  rounded-md overflow-hidden inline-block relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
     >
       <figure className="aspect-auto h-56  overflow-hidden ">
         <Image
@@ -19,7 +19,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           alt={product.name}
           width={200}
           height={200}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full object-center"
         />
       </figure>
       <section className="p-4">

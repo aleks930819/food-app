@@ -53,7 +53,7 @@ const OurTeamData = [
 
 const OurTeam = () => {
   return (
-    <div className="max-w-6xl mx-auto mt-20 mb-40">
+    <div className="max-w-6xl mx-auto mt-20 ">
       <h2 className="text-4xl font-bold text-center mb-10">
         Our <span className="text-primary-light">awesome team</span> members
       </h2>
@@ -70,17 +70,10 @@ const OurTeam = () => {
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-end items-center p-4 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 z-20">
-                <h3
-                  className="text-2xl font-bold mt-4 text-white
-                 translate-y-0 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out"
-                >
+                <h3 className="text-2xl font-bold mt-4 text-white translate-y-0 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
                   {member.name}
                 </h3>
-                <p
-                  className="text-gray-100
-                  translate-y-0 group-hover:translate-y-[-20px] transition-all duration-500 ease-in-out
-                "
-                >
+                <p className="text-gray-100 translate-y-0 group-hover:translate-y-[-20px] transition-all duration-500 ease-in-out">
                   {member.title}
                 </p>
               </div>

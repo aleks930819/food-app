@@ -1,25 +1,33 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 
-const instance: AxiosInstance = axios.create({
+const instance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}`,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
-type FetchDataProps = {
-  url: string;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
-  data?: any;
-};
+type methods = 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
+interface RequestConfig {
+  [key: string]: any;
+  endpoint: string;
+  params?: {
+    [key: string]: any;
+  };
+  method?: methods;
+  body?: any;
+}
 
-export const fetchData = async ({ url, method = 'GET', data }: FetchDataProps): Promise<any> => {
+export async function performRequest<T>({ endpoint, params = {}, method = 'GET', body }: RequestConfig): Promise<T> {
   try {
-    const res = await instance.request({
-      url,
+    const { data } = await instance({
+      url: endpoint,
       method,
-      data,
+      params,
+      data: body,
     });
-    return res.data;
+    return data;
   } catch (err) {
-    console.error(err);
-    return null;
+    throw err;
   }
-};
+}

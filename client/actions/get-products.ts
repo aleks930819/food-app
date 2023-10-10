@@ -1,12 +1,12 @@
 import { Product } from '@/types/types';
-import { fetchData } from '@/utils/axios';
+import { performRequest } from '@/utils/axios';
 
 export const getProducts = async () => {
   try {
-    const products = fetchData({
-      url: '/products',
+    const products = await performRequest<Product[]>({
+      endpoint: '/products',
     });
-    return products as Promise<Product[]>;
+    return products;
   } catch (err) {
     return null;
   }

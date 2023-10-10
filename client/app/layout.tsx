@@ -5,6 +5,7 @@ import { Lexend } from 'next/font/google';
 const inter = Lexend({ subsets: ['latin'] });
 
 import Header from '@/components/header/header';
+import ScrollToTopButton from '@/components/ui/srcoll-to-top-button';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Header />
         <main>{children}</main>
+        <ScrollToTopButton />
       </body>
     </html>
   );

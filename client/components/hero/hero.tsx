@@ -1,5 +1,5 @@
-import background from '@/public/images/background.jpg';
-import food from '@/public/images/food-4.png';
+import background from '@/public/images/background.webp';
+import food from '@/public/images/food-4.webp';
 
 import { Plus } from 'lucide-react';
 
