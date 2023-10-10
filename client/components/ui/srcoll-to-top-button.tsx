@@ -31,7 +31,7 @@ const ScrollToTopButton = () => {
     <div className="fixed bottom-0 right-0">
       <button
         onClick={scrollHandler}
-        className={`flex fixed bottom-7 right-0 hover:bg-primary-dark bg-primary-light text-white p-2  shadow-md transition duration-500 ease-in-out transform overflow-y-auto
+        className={`flex fixed bottom-20 right-0 hover:bg-primary-light bg-primary-dark text-white p-2  shadow-md transition duration-500 ease-in-out transform overflow-y-auto
       ${isVisible ? 'translate-x-0 opacity-100' : ' opacity-0 translate-x-full pointer-events-none'}
      `}
       >

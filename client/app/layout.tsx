@@ -6,6 +6,7 @@ const inter = Lexend({ subsets: ['latin'] });
 
 import Header from '@/components/header/header';
 import ScrollToTopButton from '@/components/ui/srcoll-to-top-button';
+import Footer from '@/components/footer/footer';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <ScrollToTopButton />
+        <Footer />
       </body>
     </html>
   );
