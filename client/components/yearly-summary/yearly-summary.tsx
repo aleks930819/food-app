@@ -6,6 +6,7 @@ import { Boxes, Award, ShieldHalf, Users } from 'lucide-react';
 import CountComponent from '../count-up/count-up';
 
 const ICON_SIZE = 52;
+const ICON_COLOR = 'text-orange-400';
 
 const YearlySummary = () => {
   return (
@@ -14,19 +15,19 @@ const YearlySummary = () => {
         <CountComponent
           title={'Satisfied Clients'}
           count={1600}
-          icon={<Users size={ICON_SIZE} className="text-orange-400" />}
+          icon={<Users size={ICON_SIZE} className={ICON_COLOR} />}
         />
         <span className="w-px h-20 bg-gray-400" />
         <CountComponent
           title={'Expert Team'}
           count={186}
-          icon={<ShieldHalf size={ICON_SIZE} className="text-orange-400" />}
+          icon={<ShieldHalf size={ICON_SIZE} className={ICON_COLOR} />}
         />
         <span className="w-px h-20 bg-gray-400" />
         <CountComponent
           title={'Activate Products'}
           count={200}
-          icon={<Boxes size={ICON_SIZE} className="text-orange-400" />}
+          icon={<Boxes size={ICON_SIZE} className={ICON_COLOR} />}
         />
         <span className="w-px h-20 bg-gray-400" />
         <CountComponent

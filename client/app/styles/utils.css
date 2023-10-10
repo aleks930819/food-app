@@ -37,3 +37,14 @@
   background-color: #76a713;
   color: #fff;
 }
+
+.blog-card-image-hover {
+  content: '';
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: -webkit-linear-gradient(bottom, rgba(118, 167, 19, 0.9), rgba(118, 167, 19, 0));
+}
