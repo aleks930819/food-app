@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Navigation, Pagination } from 'swiper/modules';
 
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -88,13 +90,29 @@ const OurTeam = () => {
                 height={700}
                 loading="lazy"
               />
+
               <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-end items-center p-4 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 z-20">
-                <h3 className="text-2xl font-bold mt-4 text-white translate-y-0 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
+                <h3 className="text-2xl font-bold mt-4 text-white translate-y-0 group-hover:translate-y-[-20px] transition-all duration-500 ease-in-out">
                   {member.name}
                 </h3>
                 <p className="text-gray-100 translate-y-0 group-hover:translate-y-[-20px] transition-all duration-500 ease-in-out">
                   {member.title}
                 </p>
+                <div
+                  className="flex flex-col gap-3 absolute top-10 left-4 w-full h-full
+                transform -translate-x-full group-hover:-translate-x-0 transition-all duration-500 ease-in-out text-white
+                "
+                >
+                  <a href="#">
+                    <Facebook size={20} />
+                  </a>
+                  <a href="#">
+                    <Instagram size={20} />
+                  </a>
+                  <a href="#">
+                    <Linkedin size={20} />
+                  </a>
+                </div>
               </div>
             </div>
           </SwiperSlide>

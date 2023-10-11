@@ -44,3 +44,36 @@ export const footerLinks = [
     href: '/cookies-policy',
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    name: 'Fruits & Vegetable',
+    slug: 'fruits-vegetable',
+  },
+  {
+    id: 2,
+    name: 'Bread & Pastries',
+    slug: 'bread-pastries',
+  },
+  {
+    id: 3,
+    name: 'Breakfast & Cereal',
+    slug: 'breakfast-cereal',
+  },
+  {
+    id: 4,
+    name: 'Organic Drinks',
+    slug: 'organic-drinks',
+  },
+  {
+    id: 5,
+    name: 'Dairy Items',
+    slug: 'dairy-items',
+  },
+  {
+    id: 6,
+    name: 'Seeds & Nuts',
+    slug: 'seeds-nuts',
+  },
+];

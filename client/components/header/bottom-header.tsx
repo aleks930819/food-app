@@ -13,9 +13,7 @@ const BottomHeader = async () => {
     <div className="bg-primary-light w-full">
       <div className="hidden max-w-6xl md:flex justify-between items-center mx-auto  px-4 py-4 text-white">
         {/* CATEGORIES */}
-        <ClientOnly>
-          <HeaderCategories />
-        </ClientOnly>
+        <HeaderCategories />
         {/* LINKS */}
         <nav className="">
           <ul className="inline-flex justify-center gap-10 items-center ">
