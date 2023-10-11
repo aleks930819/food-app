@@ -1,23 +1,20 @@
 import React from 'react';
 
-import { ChevronDown, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 
 import { navLinks, LinkType } from '@/data/links';
+import HeaderCategories from './header-categories';
+import { getCategories } from '@/actions/get-categories';
 
-const BottomHeader = () => {
+const BottomHeader = async () => {
+  const categories = await getCategories();
+
   return (
     <div className="bg-primary-light w-full">
       <div className="max-w-6xl flex justify-between items-center mx-auto  px-4 py-4 text-white">
         {/* CATEGORIES */}
-        <ul>
-          <li>
-            <Link href="#" className="flex items-center gap-2">
-              <span className="font-bold  cursor-pointer">Categories</span>
-              <ChevronDown size={18} />
-            </Link>
-          </li>
-        </ul>
+        <HeaderCategories categories={categories} />
         {/* LINKS */}
         <nav className="">
           <ul className="inline-flex justify-center gap-10 items-center ">
