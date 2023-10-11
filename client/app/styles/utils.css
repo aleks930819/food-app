@@ -48,3 +48,16 @@
   bottom: 0;
   background-image: -webkit-linear-gradient(bottom, rgba(118, 167, 19, 0.9), rgba(118, 167, 19, 0));
 }
+
+.icon-before::before {
+  content: '';
+  background-color: #ffe4cc;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+}

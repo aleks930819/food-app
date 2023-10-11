@@ -12,7 +12,7 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <main className="px-4">
+    <main className="px-4 md:px-0">
       <Hero />
       <Features />
       <FeaturedProducts products={products} />

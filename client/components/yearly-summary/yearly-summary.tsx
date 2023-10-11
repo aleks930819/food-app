@@ -2,6 +2,8 @@
 import background from '@/public/images/bg-section4.webp';
 import Image from 'next/image';
 
+import { cn } from '@/lib/utils';
+
 import { motion, useInView } from 'framer-motion';
 import { Variants } from 'framer-motion';
 import { useRef } from 'react';
@@ -11,14 +13,14 @@ import CountComponent from '@/components/count-up/count-up';
 
 const ICON_SIZE = 50;
 const DURATION = 3;
-const ICON_COLOR = 'text-orange-400';
+const ICON_COLOR = 'text-secondary';
 
 const variants: Variants = {
   hidden: { opacity: 0, y: 100 },
   visible: { opacity: 1, y: 0 },
 };
 
-const YearlySummary = () => {
+const YearlySummary = ({ classNames }: { classNames?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -29,7 +31,7 @@ const YearlySummary = () => {
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       transition={{ duration: 0.5 }}
-      className="relative  mx-auto bg-[#f4f6e8] h-auto md:h-[40vh] py-10  md:py-auto md:pt-16 mt-20"
+      className={cn('relative  mx-auto bg-[#f4f6e8] h-auto md:h-[40vh] py-10  md:py-auto md:pt-16 mt-20', classNames)}
     >
       {isInView && (
         <section className="flex flex-col px-4 md:px-auto justify-start items-start md:flex-row md:justify-center md:items-center gap-6 ">

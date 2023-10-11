@@ -17,19 +17,13 @@ type TBreadCrumbProps = {
 
 const Seperator = () => {
   return (
-    <li className="mx-2  mt-auto mb-auto">
-      <ChevronsRight size={16} />
+    <li className="mx-1  mt-auto mb-auto pt-[2px]">
+      <ChevronsRight size={20} />
     </li>
   );
 };
 
-const Breadcrumb = ({
-  homeElement,
-  containerClasses,
-  listClasses,
-  currentPathClass,
-  capitalizeLinks,
-}: TBreadCrumbProps) => {
+const Breadcrumb = ({ homeElement, capitalizeLinks }: TBreadCrumbProps) => {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path);
   const currentPath = pathNames[pathNames.length - 1];
@@ -38,7 +32,7 @@ const Breadcrumb = ({
   if (pathNames.length === 0) return null;
 
   return (
-    <div className="relative h-[25vh] ">
+    <div className="relative h-[30vh] ">
       <div className="absolute top-0 left-0 w-full h-full z-[-1] ">
         <Image
           src="/images/breadcrumb.jpg"
@@ -48,10 +42,11 @@ const Breadcrumb = ({
           priority={true}
           className="object-cover object-center  w-full h-full"
         />
-        <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
+        <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60" />
       </div>
+
       <ul className="flex absolute  top-0 left-0 text-white  w-full h-full text-center justify-center">
-        <li className="text-white mt-auto mb-auto">
+        <li className="text-white text-lg mt-auto mb-auto   hover:text-primary-dark transition-all duration-300 ease-in-out">
           <Link href={'/'}>{homeElement}</Link>
         </li>
         {pathNames.length !== 0 && <Seperator />}
@@ -61,12 +56,14 @@ const Breadcrumb = ({
           itemLink = formatLinkText(itemLink);
           return (
             <React.Fragment key={index}>
-              <li className={`text-white mb-auto mt-auto`}>
+              <li
+                className={`text-white mb-auto mt-auto  hover:text-primary-dark transition-all duration-300 ease-in-out`}
+              >
                 {currentPath === link ? (
                   // Check if the current path is a product page and if it is, display the word "Продукт"
                   // To avoid displaying the product name in the breadcrumb
                   //  TODO: Make this check more robust
-                  <span className="text-white">
+                  <span className="text-white text-lg">
                     {pathNames[0] === 'products' && pathNames.length > 1 ? 'Product' : itemLink}
                   </span>
                 ) : (
