@@ -10,6 +10,7 @@ import YearlySummary from '@/components/yearly-summary/yearly-summary';
 
 export default async function Home() {
   const products = await getProducts();
+
   return (
     <>
       <Hero />

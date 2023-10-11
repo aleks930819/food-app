@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { ChevronDown, ShoppingCart } from 'lucide-react';
-
 import Link from 'next/link';
+
+import { navLinks, LinkType } from '@/data/links';
 
 const BottomHeader = () => {
   return (
@@ -20,11 +21,11 @@ const BottomHeader = () => {
         {/* LINKS */}
         <nav className="">
           <ul className="inline-flex justify-center gap-10 items-center ">
-            <li className="font-bold">Home</li>
-            <li className="font-bold">About Us</li>
-            <li className="font-bold">Our Team</li>
-            <li className="font-bold">Products</li>
-            <li className="font-bold">News</li>
+            {navLinks.map((link: LinkType) => (
+              <li key={link.title} className="font-bold">
+                <Link href={link.href}>{link.title}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
         {/* CART */}

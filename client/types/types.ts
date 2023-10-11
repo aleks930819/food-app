@@ -16,3 +16,15 @@ export interface Category {
   name: string;
   slug: string;
 }
+
+export interface Blog {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  image: string;
+  title: string;
+  slug: string;
+  category: string;
+  createdFrom: string;
+  description: string;
+}

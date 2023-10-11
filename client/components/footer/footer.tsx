@@ -1,6 +1,10 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import BottomFooter from './bottom-footer';
 import FooterGalleryImageItem from './footer-gallery-image-item';
+
+import { navLinks, LinkType, footerLinks } from '@/data/links';
+import { getBlogs } from '@/actions/get-blogs';
+import { ChevronRight } from 'lucide-react';
 
 const FooterColumn = ({ heading, children }: { heading: string; children: React.ReactNode }) => {
   return (
@@ -11,21 +15,40 @@ const FooterColumn = ({ heading, children }: { heading: string; children: React.
   );
 };
 
-const Footer = () => {
+const FooterLinksColumn = ({ links }: { links: LinkType[] | undefined }) => {
+  if (!links) return null;
+
+  return (
+    <nav className="mb-auto mt-4">
+      <ul>
+        {links.map((link: LinkType) => (
+          <li key={link.title} className="mb-2 text-gray-200 text-md max-w-sm ">
+            <ChevronRight size={14} className="inline-block mr-1" />
+            <Link href={link.href}>{link.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+const Footer = async () => {
+  const blogs = await getBlogs();
+
+  // transform blog data to links suitable for footer
+  const blogLinks = blogs?.slice(0, 4).map((blog) => ({
+    title: blog.title,
+    href: `/blogs/${blog.slug}`,
+  }));
+
   return (
     <footer className="bg-primary-light pb-4 pt-10 mt-20 ">
       <div className="max-w-6xl mx-auto text-white flex justify-center pb-24 items-center gap-20">
         <FooterColumn heading="NutriNosh">
-          <nav className="mt-4">
-            <ul>
-              <li>link</li>
-              <li>link</li>
-              <li>link</li>
-              <li>link</li>
-              <li>link</li>
-              <li>link</li>
-            </ul>
-          </nav>
+          <FooterLinksColumn links={navLinks} />
+        </FooterColumn>
+        <FooterColumn heading="More Information">
+          <FooterLinksColumn links={footerLinks} />
         </FooterColumn>
 
         <FooterColumn heading="Gallery">
@@ -37,15 +60,7 @@ const Footer = () => {
           </div>
         </FooterColumn>
         <FooterColumn heading="Recent Posts">
-          <nav className=" mt-4">
-            <ul>
-              <li className="mb-2 font-bold text-md max-w-sm">Our 6 of the Best Organic Chocolates to Buy.</li>
-              <li className="mb-2 font-bold text-md max-w-sm">Our 6 of the Best Organic Chocolates to Buy.</li>
-              <li className="mb-2 font-bold text-md max-w-sm">Our 6 of the Best Organic Chocolates to Buy.</li>
-              <li className="mb-2 font-bold text-md max-w-sm">Our 6 of the Best Organic Chocolates to Buy.</li>
-              <li className="mb-2 font-bold text-md max-w-sm">Our 6 of the Best Organic Chocolates to Buy.</li>
-            </ul>
-          </nav>
+          <FooterLinksColumn links={blogLinks} />
         </FooterColumn>
       </div>
       <BottomFooter />

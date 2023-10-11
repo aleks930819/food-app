@@ -1,8 +1,11 @@
-import image from '@/public/images/fresh.png';
 import Image from 'next/image';
 
 import { Columns, User } from 'lucide-react';
 import Link from 'next/link';
+
+import { motion, useInView } from 'framer-motion';
+import { Variants } from 'framer-motion';
+import { useRef } from 'react';
 
 interface BlogCardProps {
   date: string;
@@ -13,9 +16,35 @@ interface BlogCardProps {
   description: string;
 }
 
+export const cardVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+    rotateY: 90,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    rotateY: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut',
+    },
+  },
+};
+
 const BlogCard = ({ date, image, title, category, createdFrom, description }: BlogCardProps) => {
+  const ref = useRef(null);
+  const isInViewCard = useInView(ref, { once: true });
+
   return (
-    <figure className="shadow-md overflow-hidden rounded-md">
+    <motion.figure
+      className="shadow-md overflow-hidden rounded-md"
+      variants={cardVariants}
+      initial="hidden"
+      animate={isInViewCard ? 'animate' : 'initial'}
+      ref={ref}
+    >
       <div className="relative group   cursor-pointer">
         <Image
           src={image}
@@ -59,7 +88,7 @@ const BlogCard = ({ date, image, title, category, createdFrom, description }: Bl
           </Link>
         </div>
       </figcaption>
-    </figure>
+    </motion.figure>
   );
 };
 

@@ -11,7 +11,7 @@ const BottomFooter = () => {
 
       <p className="">
         <Link target="_blank" href="https://github.com/aleks930819" className="">
-          Develop by <span className="text-primary-dark underline">@alex</span>
+          Developed by <span className="text-black underline">@alex</span>
         </Link>
       </p>
     </div>

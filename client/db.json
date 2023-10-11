@@ -122,5 +122,62 @@
       "name": "Seeds & Nuts",
       "slug": "seeds-nuts"
     }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "createdAt": "2023-10-10",
+      "updatedAt": "23-10-10",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "title": "Lorem Ipsum Blog 1",
+      "slug": "lorem-ipsum-blog-1",
+      "category": "Technology",
+      "createdFrom": "New York",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "createdAt": "2023-10-09",
+      "updatedAt": "23-10-10",
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "title": "Travel Adventures Blog 2",
+      "slug": "travel-adventures-blog-2",
+      "category": "Travel",
+      "createdFrom": "Paris",
+      "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+    },
+    {
+      "id": 3,
+      "createdAt": "2023-10-09",
+      "updatedAt": "23-10-10",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+      "title": "Travel Adventures Blog 2",
+      "slug": "travel-adventures-blog-2",
+      "category": "Travel",
+      "createdFrom": "Paris",
+      "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+    },
+    {
+      "id": 4,
+      "createdAt": "2023-10-09",
+      "updatedAt": "23-10-10",
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "title": "Travel Adventures Blog 2",
+      "slug": "travel-adventures-blog-2",
+      "category": "Travel",
+      "createdFrom": "Paris",
+      "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+    },
+    {
+      "id": 5,
+      "createdAt": "2023-10-09",
+      "updatedAt": "23-10-10",
+      "image": "https://images.unsplash.com/photo-1570197571499-166b36435e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1906&q=80",
+      "title": "Travel Adventures Blog 2",
+      "slug": "travel-adventures-blog-2",
+      "category": "Travel",
+      "createdFrom": "Paris",
+      "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+    }
   ]
 }
