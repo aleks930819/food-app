@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 import { Cherry, Bean, Apple, Milk, LeafyGreen, UtensilsCrossed } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
+import axios from 'axios';
+import useSWR from 'swr';
 
 import { Category } from '@/types/types';
 
@@ -54,7 +56,13 @@ const CategoriesDropDown = ({
               <span className="bg-gray-100 text-primary-light rounded-full  p-3">
                 <IconForTheCategory id={category.id} />
               </span>
-              <span className="text-sm">{category.name}</span>
+              <span
+                className="text-sm
+               hover:text-primary-dark transition-colors duration-200 ease-out cursor-pointer
+              "
+              >
+                {category.name}
+              </span>
             </Link>
           </li>
         ))}
@@ -63,10 +71,16 @@ const CategoriesDropDown = ({
   );
 };
 
-const HeaderCategories = ({ categories }: { categories: Category[] | null }) => {
+const HeaderCategories = () => {
   const [toggleCategories, setToggleCategories] = useState(false);
 
-  if (!categories) return null;
+  // fetching the data from the app/api to avoid expose of the admin url
+  const fetcher = async () => {
+    const categories = await axios.get('/api/categories');
+    return categories.data;
+  };
+
+  const { data: categories } = useSWR('/api/categories', fetcher);
 
   return (
     <ul>

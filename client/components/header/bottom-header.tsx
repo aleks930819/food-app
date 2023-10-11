@@ -4,23 +4,27 @@ import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 
 import { navLinks, LinkType } from '@/data/links';
+
 import HeaderCategories from './header-categories';
-import { getCategories } from '@/actions/get-categories';
+import ClientOnly from '@/components/client-only/client-only';
 
 const BottomHeader = async () => {
-  const categories = await getCategories();
-
   return (
     <div className="bg-primary-light w-full">
       <div className="max-w-6xl flex justify-between items-center mx-auto  px-4 py-4 text-white">
         {/* CATEGORIES */}
-        <HeaderCategories categories={categories} />
+        <ClientOnly>
+          <HeaderCategories />
+        </ClientOnly>
         {/* LINKS */}
         <nav className="">
           <ul className="inline-flex justify-center gap-10 items-center ">
             {navLinks.map((link: LinkType) => (
-              <li key={link.title} className="font-bold">
-                <Link href={link.href}>{link.title}</Link>
+              <li key={link.title} className="font-bold ">
+                <Link href={link.href} className="group relative">
+                  {link.title}
+                  <span className="absolute -bottom-1  left-0 w-full h-[2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 ease-in-out"></span>
+                </Link>
               </li>
             ))}
           </ul>
