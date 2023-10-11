@@ -54,10 +54,29 @@ const OurTeamData = [
 const OurTeam = () => {
   return (
     <div className="max-w-6xl mx-auto mt-20 ">
-      <h2 className="text-4xl font-bold text-center mb-10">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
         Our <span className="text-primary-light">awesome team</span> members
       </h2>
-      <Swiper spaceBetween={30} slidesPerView={4} modules={[Pagination]} pagination={{ clickable: true }}>
+      <Swiper
+        spaceBetween={30}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+        }}
+        slidesPerView={1}
+        modules={[Pagination]}
+        pagination={{ clickable: true }}
+      >
         {OurTeamData.map((member) => (
           <SwiperSlide>
             <div className="w-auto h-[320px] relative group rounded-md overflow-hidden">

@@ -42,8 +42,8 @@ const Footer = async () => {
   }));
 
   return (
-    <footer className="bg-primary-light pb-4 pt-10 mt-20 ">
-      <div className="max-w-6xl mx-auto text-white flex justify-center pb-24 items-center gap-20">
+    <footer className="bg-primary-light px-4 md:px-auto pb-4 pt-10 mt-20 ">
+      <div className="max-w-6xl mx-auto text-white flex flex-col justify-start items-start pb-10 md:flex-row md:justify-center md:pb-24 md:items-center gap-20">
         <FooterColumn heading="NutriNosh">
           <FooterLinksColumn links={navLinks} />
         </FooterColumn>

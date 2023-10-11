@@ -12,7 +12,7 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <>
+    <main className="px-4">
       <Hero />
       <Features />
       <FeaturedProducts products={products} />
@@ -20,6 +20,6 @@ export default async function Home() {
       <OurTeam />
       <YearlySummary />
       <LatestBlogs />
-    </>
+    </main>
   );
 }

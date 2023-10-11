@@ -11,9 +11,9 @@ interface CounterUpProps {
 
 const CountComponent = ({ title, count, icon, duration }: CounterUpProps) => {
   return (
-    <div className="flex items-center justify-center gap-4">
-      {icon}
-      <div className=" flex flex-col gap-1">
+    <div className="flex  items-center justify-center gap-4 md:w-auto">
+      <span className="">{icon}</span>
+      <div className=" flex flex-col justify-start items-start gap-1 ">
         <span className="text-black font-semibold text-2xl">
           <CounterUp end={count} duration={duration} />
         </span>

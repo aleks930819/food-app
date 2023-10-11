@@ -30,7 +30,7 @@ const TopHeader = () => {
           </span>
         </p>
         {/* ACTIONS */}
-        <div className="flex gap-4 items-center">
+        <div className="hidden  md:flex gap-4 items-center">
           <TopHeaderActionButton text="My Wishlist" icon={<Heart size={14} />} onClick={() => {}} />
           <div className="bg-primary-light my-4 w-[.5px] h-4"></div>
           <TopHeaderActionButton text="Sign In" onClick={() => {}} />

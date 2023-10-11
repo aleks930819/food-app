@@ -41,7 +41,7 @@ const CategoriesDropDown = ({
     <nav
       className={`${
         toggleCategoreis
-          ? `h-auto transform translate-y-0 opacity-100 w-[250px]`
+          ? `h-auto transform translate-y-0 opacity-100 w-[300px]`
           : `h-0 transform -translate-y-2 opacity-0`
       }
       absolute
@@ -56,11 +56,7 @@ const CategoriesDropDown = ({
               <span className="bg-gray-100 text-primary-light rounded-full  p-3">
                 <IconForTheCategory id={category.id} />
               </span>
-              <span
-                className="text-sm
-               hover:text-primary-dark transition-colors duration-200 ease-out cursor-pointer
-              "
-              >
+              <span className="text-sm hover:text-primary-dark transition-colors duration-200 ease-out cursor-pointer">
                 {category.name}
               </span>
             </Link>

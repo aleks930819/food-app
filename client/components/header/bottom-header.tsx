@@ -11,7 +11,7 @@ import ClientOnly from '@/components/client-only/client-only';
 const BottomHeader = async () => {
   return (
     <div className="bg-primary-light w-full">
-      <div className="max-w-6xl flex justify-between items-center mx-auto  px-4 py-4 text-white">
+      <div className="hidden max-w-6xl md:flex justify-between items-center mx-auto  px-4 py-4 text-white">
         {/* CATEGORIES */}
         <ClientOnly>
           <HeaderCategories />

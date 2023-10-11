@@ -42,7 +42,7 @@ const Column = ({
 
 const SpecialOffers = () => {
   return (
-    <div className="max-w-6xl mx-auto mt-20 h-[500px]  flex flex-col md:flex-row w-full  gap-4">
+    <div className="max-w-6xl mx-auto mt-20 h-auto md:h-[500px]  flex flex-col md:flex-row w-full  gap-4">
       {/* FIRST COLUMN */}
       <div className="bg-orange-100 w-full md:w-[50%] relative px-6 py-10 md:py-4 group hover:shadow-md transition-all duration-500 ease-out rounded-md">
         <div className="flex flex-col justify-center items-center">
