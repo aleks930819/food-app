@@ -1,4 +1,5 @@
 import { getProducts } from '@/actions';
+import { PageHeading } from '@/components/page-heading';
 import { ProductCardBig } from '@/components/product';
 
 const ProductsPage = async () => {
@@ -6,11 +7,7 @@ const ProductsPage = async () => {
 
   return (
     <div className="max-w-6xl mx-auto py-6">
-      <p className="text-center text-2xl text-primary-light pb-2">~ Porudcts ~</p>
-      <h1 className="text-4xl font-bold text-center">
-        All of our products are <br />
-        organic & fresh.
-      </h1>
+      <PageHeading message="~ Products ~" heading={`All of our products are <br/>  organic & fresh.`} />
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
         {products?.map((product) => <ProductCardBig product={product} />)}
       </section>
