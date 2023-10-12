@@ -17,7 +17,8 @@ const BlogsPage = async () => {
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto mt-12 gap-4">
         {blogs?.map((blog) => (
           <div className="  mb-28 px-2" key={blog.id}>
-            <div className="w-full h-64 relative">
+            <div className="w-full h-64 relative group">
+              <span className="blog-card-image-hover opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out" />
               <img src={blog.image} alt="blog image" width={320} height={300} className="w-full h-full object-cover" />
 
               {/* CONTENT */}
@@ -38,7 +39,7 @@ const BlogsPage = async () => {
                 {/* TODO: Find way its not showing the Link element */}
                 <Link
                   href={`/blogs/${blog.slug}`}
-                  className="text-primary-light px-4 py-2 font-bold   inline-flex items-center group"
+                  className="text-primary-light px-4 py-2 font-bold   inline-flex items-center"
                 >
                   Read More
                   <ChevronRight
