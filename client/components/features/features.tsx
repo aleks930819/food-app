@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { Cherry, Bean, Apple, Milk, LeafyGreen, UtensilsCrossed } from 'lucide-react';
 
-import Grid from '@/components/grid/grid';
+import { Grid } from '@/components/grid';
 
 interface FeaturesItemProps {
   title: string;

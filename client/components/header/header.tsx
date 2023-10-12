@@ -1,7 +1,7 @@
 import TopHeader from './top-header';
 import BottomHeader from './bottom-header';
 
-import Search from '@/components/search/search';
+import { Search } from '@/components/search';
 
 const Header = () => {
   return (

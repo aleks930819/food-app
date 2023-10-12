@@ -2,7 +2,7 @@ import { Blog } from '@/types/types';
 
 import { performRequest } from '@/utils/axios';
 
-export const getBlogs = async () => {
+const getBlogs = async () => {
   try {
     const blogs = await performRequest<Blog[]>({
       endpoint: '/blogs',
@@ -12,3 +12,5 @@ export const getBlogs = async () => {
     return null;
   }
 };
+
+export default getBlogs;

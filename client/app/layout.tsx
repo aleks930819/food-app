@@ -4,10 +4,12 @@ import { Lexend } from 'next/font/google';
 
 const inter = Lexend({ subsets: ['latin'] });
 
-import Header from '@/components/header/header';
-import ScrollToTopButton from '@/components/ui/srcoll-to-top-button';
-import Footer from '@/components/footer/footer';
-import Breadcrumb from '@/components/breadcrumb/breadcrumb';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+
+import { Breadcrumb } from '@/components/breadcrumb';
+
+import { ScrollToTopButton } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',

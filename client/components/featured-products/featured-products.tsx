@@ -1,6 +1,7 @@
 import { Product } from '@/types/types';
-import ProductCard from '../product/product-card';
-import Grid from '../grid/grid';
+
+import { ProductCard } from '@/components/product';
+import { Grid } from '@/components/grid';
 
 const FeaturedProducts = ({ products }: { products: Product[] | null }) => {
   if (!products) return null;

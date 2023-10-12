@@ -1,5 +1,6 @@
 import React from 'react';
-import { getBlogs } from '@/actions/get-blogs';
+
+import { getBlogs } from '@/actions';
 
 import LatestBlogSwipers from './latest-blogs-swiper';
 

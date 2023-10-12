@@ -1,12 +1,12 @@
-import { getProducts } from '@/actions/get-products';
+import { getProducts } from '@/actions';
 
-import FeaturedProducts from '@/components/featured-products/featured-products';
-import Features from '@/components/features/features';
-import Hero from '@/components/hero/hero';
-import LatestBlogs from '@/components/latest-blogs/latest-blogs';
-import OurTeam from '@/components/our-team/our-team';
-import SpecialOffers from '@/components/special-offers/special-offers';
-import YearlySummary from '@/components/yearly-summary/yearly-summary';
+import { FeaturedProducts } from '@/components/featured-products';
+import { Features } from '@/components/features';
+import { Hero } from '@/components/hero';
+import { LatestBlogs } from '@/components/latest-blogs';
+import { OurTeam } from '@/components/our-team';
+import { SpecialOffers } from '@/components/special-offers';
+import { YearlySummary } from '@/components/yearly-summary';
 
 export default async function Home() {
   const products = await getProducts();

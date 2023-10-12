@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { getCategories } from '@/actions/get-categories';
+import { getCategories } from '@/actions';
 
 export async function GET() {
   const res = await getCategories();

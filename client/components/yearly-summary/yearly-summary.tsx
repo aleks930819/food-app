@@ -9,7 +9,7 @@ import { Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { Boxes, Award, ShieldHalf, Users } from 'lucide-react';
 
-import CountComponent from '@/components/count-up/count-up';
+import { CountComponent } from '@/components/count-up';
 
 const ICON_SIZE = 50;
 const DURATION = 3;

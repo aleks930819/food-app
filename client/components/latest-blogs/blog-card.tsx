@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import { Columns, User } from 'lucide-react';

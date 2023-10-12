@@ -2,7 +2,7 @@ import { Category } from '@/types/types';
 
 import { performRequest } from '@/utils/axios';
 
-export const getCategories = async () => {
+const getCategories = async () => {
   try {
     const categories = await performRequest<Category[]>({
       endpoint: '/categories',
@@ -12,3 +12,5 @@ export const getCategories = async () => {
     return null;
   }
 };
+
+export default getCategories;

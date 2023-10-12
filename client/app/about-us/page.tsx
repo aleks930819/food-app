@@ -1,5 +1,6 @@
-import YearlySummary from '@/components/yearly-summary/yearly-summary';
 import { Undo2, Leaf, MessageSquare, CreditCard } from 'lucide-react';
+
+import { YearlySummary } from '@/components/yearly-summary';
 
 const AboutUsFeaturesItems = ({ icon, title, content }: { icon: React.ReactNode; title: string; content: string }) => {
   return (
@@ -44,7 +45,7 @@ const AboutUsPage = () => {
           />
         </div>
         <section className="flex-1  mb-auto py-10">
-          <em className="text-primary-light italic font-bold text-2xl mb-4 inline-block   pb-2">Why Choose Us?</em>
+          <em className="text-primary-light italic font-bold text-2xl mb-4 inline-block   pb-2">~ Why Choose Us? ~</em>
           <h2 className="text-3xl font-bold mb-4">We do not buy from the open market & traders.</h2>
           <p className="mb-4 text-gray-600">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, reprehenderit perspiciatis dignissimos

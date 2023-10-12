@@ -3,7 +3,7 @@ import BottomFooter from './bottom-footer';
 import FooterGalleryImageItem from './footer-gallery-image-item';
 
 import { navLinks, LinkType, footerLinks } from '@/data/links';
-import { getBlogs } from '@/actions/get-blogs';
+import { getBlogs } from '@/actions';
 import { ChevronRight } from 'lucide-react';
 
 const FooterColumn = ({ heading, children }: { heading: string; children: React.ReactNode }) => {
