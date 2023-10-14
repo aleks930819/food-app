@@ -9,7 +9,7 @@ const Search = () => {
           placeholder="Search Product"
           className="border-2 rounded-top-left rounded-bottom-left px-4 py-2 w-full outline-none focus:border-primary-light transition-all duration-300 ease-in-out"
         />
-        <button className="border-2 border-primary-light rounded-top-right rounded-bottom-right bg-primary-light text-white px-4 py-2 hover:bg-primary-light/95 transition-all duration-300 ease-in-out">
+        <button className="border-2 border-primary-light rounded-top-right rounded-bottom-right bg-primary-light text-white px-4 py-2 hover:bg-primary-dark transition-all duration-300 ease-in-out">
           Search
         </button>
       </form>

@@ -48,7 +48,7 @@ const Hero = () => {
             <Link
               href="#"
               aria-label="Shop Now"
-              className="bg-primary-light flex items-center text-white font-bold px-4 py-2  md:px-6 md:py-4 rounded-full mt-4 hover:bg-primary-light/95 transition-all duration-300 ease-in-out"
+              className="bg-primary-light flex items-center text-white font-bold px-4 py-2  md:px-6 md:py-4 rounded-full mt-4 hover:bg-primary-dark transition-all duration-300 ease-in-out"
             >
               Shop Now
               <Plus size={18} className="ml-2" />

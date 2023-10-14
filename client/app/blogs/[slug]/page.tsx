@@ -19,7 +19,7 @@ const BlogDetailsPage = async ({
   const blog = await getSingleBlog({ slug });
   const blogs = await getBlogs();
 
-  if (!blog) {
+  if (!blog || blog.length === 0) {
     return <NotFound />;
   }
 
