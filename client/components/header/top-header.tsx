@@ -1,4 +1,7 @@
+'use client';
+
 import { Heart } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const TopHeaderActionButton = ({
   text,
@@ -10,7 +13,9 @@ const TopHeaderActionButton = ({
   onClick: () => void;
 }) => {
   return (
-    <button>
+    <button
+     onClick={onClick}
+    >
       <span className="text-gray-500 font-bold flex items-center   text-sm hover:text-primary-dark transition-colors duration-200 ease-out cursor-pointer">
         {icon && <span className="mr-1">{icon}</span>}
         {text}
@@ -20,6 +25,11 @@ const TopHeaderActionButton = ({
 };
 
 const TopHeader = () => {
+  const router = useRouter();
+
+  const onWishlistClick = () => {
+    router.push('/wishlist');
+  };
   return (
     <div className="text-gray-500 border text-center py-3 px-2 sm:px-4 lg:px-6">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
@@ -31,7 +41,7 @@ const TopHeader = () => {
         </p>
         {/* ACTIONS */}
         <div className="hidden  md:flex gap-4 items-center">
-          <TopHeaderActionButton text="My Wishlist" icon={<Heart size={14} />} onClick={() => {}} />
+          <TopHeaderActionButton text="My Wishlist" icon={<Heart size={14} />} onClick={onWishlistClick} />
           <div className="bg-primary-light my-4 w-[.5px] h-4"></div>
           <TopHeaderActionButton text="Sign In" onClick={() => {}} />
           <div className="bg-primary-light my-4 w-[.5px] h-4"></div>

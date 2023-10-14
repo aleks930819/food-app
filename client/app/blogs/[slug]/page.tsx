@@ -6,7 +6,7 @@ import { Timer, User } from 'lucide-react';
 import { getBlogs, getSingleBlog } from '@/actions';
 
 import { BlogGallery, SmallerBlog } from '@/components/blog';
-import NotFound from '@/app/404';
+import NotFound from '@/app/not-found';
 
 const BlogDetailsPage = async ({
   params,
