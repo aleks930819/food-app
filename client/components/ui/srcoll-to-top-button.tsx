@@ -28,7 +28,7 @@ const ScrollToTopButton = () => {
   }
 
   return (
-    <div className="fixed bottom-0 right-0 z-50">
+    <div className="fixed bottom-0 right-0 z-30">
       <button
         onClick={scrollHandler}
         className={`flex fixed bottom-0 right-0 hover:bg-primary-light bg-primary-dark text-white p-3  shadow-md transition duration-500 ease-in-out transform overflow-y-auto

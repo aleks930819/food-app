@@ -3,16 +3,15 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-import { ZoomIn } from 'lucide-react';
-
 import 'swiper/css';
 
 import { BlogImage } from '@/types/types';
 import BlogGallerySwiper from './blog-gallery-swiper';
+import { ImageZoomHover } from '../ui';
 
 const BlogGallery = ({ gallery }: { gallery: BlogImage[] }) => {
   const [showModal, setShowModal] = useState(false);
-  const handleShowModal = (i: number) => {
+  const handleShowModal = () => {
     setShowModal(true);
   };
 
@@ -20,7 +19,7 @@ const BlogGallery = ({ gallery }: { gallery: BlogImage[] }) => {
     <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 mb-6">
       {gallery.map((image, i) => (
         <div
-          onClick={() => handleShowModal(i)}
+          onClick={handleShowModal}
           className="w-full h-20 overflow-hidden rounded-md relative hover-duration-500 ease-in-out cursor-pointer"
         >
           <Image
@@ -32,9 +31,7 @@ const BlogGallery = ({ gallery }: { gallery: BlogImage[] }) => {
             className="object-cover relative w-full h-full"
           />
 
-          <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center gap-2 opacity-0 hover:opacity-100 hover-duration-500">
-            <ZoomIn size={20} className="text-white" />
-          </span>
+          <ImageZoomHover />
         </div>
       ))}
 

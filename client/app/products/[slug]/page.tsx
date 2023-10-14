@@ -1,12 +1,11 @@
 import { Heart, Minus, Plus, ShoppingCart } from 'lucide-react';
-import Image from 'next/image';
 
 import { getProducts, getSingleProduct } from '@/actions';
 
 import NotFound from '@/app/404';
 import { ReviewStars } from '@/components/review-stars';
 import { Button, SocialIcons } from '@/components/ui';
-import { ProductCard } from '@/components/product';
+import { ProductCard, ProductGalleryImages } from '@/components/product';
 
 const ProductDetailsPage = async ({
   params,
@@ -20,40 +19,17 @@ const ProductDetailsPage = async ({
 
   const products = await getProducts();
 
-  if (!product) {
+  if (!product || product.length === 0) {
     return <NotFound />;
   }
 
   const { imageURL, discount, reviews, description, price, quantity, name, categories, gallery } = product[0];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6">
+    <div className="max-w-6xl mx-auto px-4 py-0 md:py-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 mb-10">
         {/* IMAGES */}
-        <div className=" p-2">
-          <div className="w-full h-96 shadow-lg rounded-md">
-            <Image src={imageURL} alt={name} width={450} height={350} className="w-full h-full object-cover" />
-          </div>
-          {/* GALLERY WITH IMAGES */}
-          <div className="flex flex-wrap items-center gap-2 p-2 mt-4">
-            {gallery.map((image) => (
-              <div
-                className=" h-24 overflow-hidden rounded-md "
-                style={{
-                  flexBasis: 'calc(25% - 8px)',
-                }}
-              >
-                <Image
-                  src={image.url}
-                  alt={name}
-                  width={450}
-                  height={350}
-                  className="w-full h-full object-cover cursor-pointer"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <ProductGalleryImages gallery={gallery} />
         {/* INFO */}
         <section className=" px-2 py-4 text-start">
           <h2 className="text-3xl font-bold mb-4">{name}</h2>
@@ -67,7 +43,7 @@ const ProductDetailsPage = async ({
 
           {/* ACTIONS */}
           <div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start md:flex-row md:items-center gap-4">
               {/* QUANTITY */}
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">Quantity</span>
@@ -84,15 +60,15 @@ const ProductDetailsPage = async ({
                   </button>
                 </div>
               </div>
-              <Button variant="primary" className="rounded-md border-none ml-2 ">
+              <Button variant="primary" className="rounded-md  border-none m-auto md:ml-2 w-full md:w-auto">
                 <span>
-                  <ShoppingCart size={18} />
+                  <ShoppingCart size={20} />
                 </span>
                 <span>Add to Cart</span>
               </Button>
             </div>
             <div className="flex items-center gap-4 mt-4 ">
-              <Button variant="outline" className=" rounded-md  ">
+              <Button variant="outline" className=" rounded-md w-full  md:w-auto">
                 <span>
                   <Heart size={18} />
                 </span>
@@ -116,15 +92,15 @@ const ProductDetailsPage = async ({
         </section>
       </div>
       {/* REVIEWS, DESCRIPTION */}
-      <section className=" mb-10 px-2 py-4">
-        <div className="flex justify-center items-center gap-4">
-          <Button variant="dark" className=" border-none ">
+      <section className="  mb-10 px-2 py-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+          <Button variant="dark" className=" border-none w-full md:w-auto">
             <span>Description</span>
           </Button>
-          <Button variant="dark" className=" border-none ">
+          <Button variant="dark" className=" border-none w-full md:w-auto">
             <span>Additional Information</span>
           </Button>
-          <Button variant="dark">
+          <Button variant="dark" className=" border-none w-full md:w-auto">
             <span>Reviews</span>
           </Button>
         </div>
@@ -140,7 +116,7 @@ const ProductDetailsPage = async ({
         <span className="w-14 h-1 block bg-primary-light" />
 
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 mb-10">
-          {product?.slice(0, 4).map((product) => <ProductCard product={product} key={product.id} />)}
+          {products?.slice(0, 4).map((product) => <ProductCard product={product} key={product.id} />)}
         </section>
       </div>
     </div>

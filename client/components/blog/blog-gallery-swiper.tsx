@@ -24,16 +24,16 @@ const SwiperChangeButton = ({ direction, action }: { direction: string; action: 
 
 interface BlogGallerySwiperProps {
   setShowModal: (showModal: boolean) => void;
-  handleShowModal: (i: number) => void;
+  handleShowModal: () => void;
   gallery: BlogImage[];
 }
 
 const BlogGallerySwiper = ({ setShowModal, gallery, handleShowModal }: BlogGallerySwiperProps) => {
+  const [swiperImageIndex, setSwiperImageIndex] = useState(0);
+
   const ref: any = useClickAway(() => {
     setShowModal(false);
   });
-
-  const [swiperImageIndex, setSwiperImageIndex] = useState(0);
 
   const swiperRef = useRef<any>(null);
 
@@ -65,11 +65,7 @@ const BlogGallerySwiper = ({ setShowModal, gallery, handleShowModal }: BlogGalle
         >
           {gallery.map((image, i) => (
             <>
-              <SwiperSlide
-                className="w-full h-[400px] xl:h-[650px] relative"
-                key={image.id}
-                onClick={() => handleShowModal(swiperImageIndex)}
-              >
+              <SwiperSlide className="w-full h-[400px] xl:h-[650px] relative" key={image.id}>
                 <div className="w-full h-[400px] xl:h-[650px] ">
                   <Image
                     src={image.url}
