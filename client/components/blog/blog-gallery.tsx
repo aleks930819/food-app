@@ -21,7 +21,7 @@ const BlogGallery = ({ gallery }: { gallery: BlogImage[] }) => {
       {gallery.map((image, i) => (
         <div
           onClick={() => handleShowModal(i)}
-          className="w-full h-20 overflow-hidden rounded-md relative transition-all duration-500 ease-in-out cursor-pointer"
+          className="w-full h-20 overflow-hidden rounded-md relative hover-duration-500 ease-in-out cursor-pointer"
         >
           <Image
             src={image.url}
@@ -32,7 +32,7 @@ const BlogGallery = ({ gallery }: { gallery: BlogImage[] }) => {
             className="object-cover relative w-full h-full"
           />
 
-          <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center gap-2 opacity-0 hover:opacity-100 transition-all duration-500 ease-in-out">
+          <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center gap-2 opacity-0 hover:opacity-100 hover-duration-500">
             <ZoomIn size={20} className="text-white" />
           </span>
         </div>

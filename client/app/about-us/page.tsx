@@ -4,13 +4,13 @@ import { YearlySummary } from '@/components/yearly-summary';
 
 const AboutUsFeaturesItems = ({ icon, title, content }: { icon: React.ReactNode; title: string; content: string }) => {
   return (
-    <div className="flex flex-col rounded-md justify-center items-center gap-2 shadow-lg py-10 px-2 group hover:bg-secondary transition-all duration-500 ease-in-out relative">
-      <div className="bg-secondary icon-before mb-4  rounded-full p-4 text-white relative group-hover:text-secondary group-hover:bg-white transition-all duration-500 ease-in-out">
+    <div className="flex flex-col rounded-md justify-center items-center gap-2 shadow-lg py-10 px-2 group hover:bg-secondary hover-duration-500 relative">
+      <div className="bg-secondary icon-before mb-4  rounded-full p-4 text-white relative group-hover:text-secondary group-hover:bg-white hover-duration-500">
         {icon}
       </div>
 
-      <span className="text-xl font-bold group-hover:text-white transition-all duration-500 ease-in-out">{title}</span>
-      <p className="text-gray-600 group-hover:text-white transition-all duration-500 ease-in-out">{content}</p>
+      <span className="text-xl font-bold group-hover:text-white hover-duration-500">{title}</span>
+      <p className="text-gray-600 group-hover:text-white hover-duration-500">{content}</p>
     </div>
   );
 };

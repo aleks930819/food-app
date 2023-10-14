@@ -1,0 +1,150 @@
+import { Heart, Minus, Plus, ShoppingCart } from 'lucide-react';
+import Image from 'next/image';
+
+import { getProducts, getSingleProduct } from '@/actions';
+
+import NotFound from '@/app/404';
+import { ReviewStars } from '@/components/review-stars';
+import { Button, SocialIcons } from '@/components/ui';
+import { ProductCard } from '@/components/product';
+
+const ProductDetailsPage = async ({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}) => {
+  const { slug } = params;
+  const product = await getSingleProduct({ slug });
+
+  const products = await getProducts();
+
+  if (!product) {
+    return <NotFound />;
+  }
+
+  const { imageURL, discount, reviews, description, price, quantity, name, categories, gallery } = product[0];
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 mb-10">
+        {/* IMAGES */}
+        <div className=" p-2">
+          <div className="w-full h-96 shadow-lg rounded-md">
+            <Image src={imageURL} alt={name} width={450} height={350} className="w-full h-full object-cover" />
+          </div>
+          {/* GALLERY WITH IMAGES */}
+          <div className="flex flex-wrap items-center gap-2 p-2 mt-4">
+            {gallery.map((image) => (
+              <div
+                className=" h-24 overflow-hidden rounded-md "
+                style={{
+                  flexBasis: 'calc(25% - 8px)',
+                }}
+              >
+                <Image
+                  src={image.url}
+                  alt={name}
+                  width={450}
+                  height={350}
+                  className="w-full h-full object-cover cursor-pointer"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* INFO */}
+        <section className=" px-2 py-4 text-start">
+          <h2 className="text-3xl font-bold mb-4">{name}</h2>
+          <span className="mb-4 block">
+            <ReviewStars num={reviews} />
+          </span>
+          <p className="text-2xl  mb-4">
+            <strong>${price.toFixed(2)}</strong>
+          </p>
+          <p className="text-gray-400 mb-4">{description}</p>
+
+          {/* ACTIONS */}
+          <div>
+            <div className="flex items-center gap-4">
+              {/* QUANTITY */}
+              <div className="flex items-center gap-2">
+                <span className="text-gray-400">Quantity</span>
+                <div className="inline-flex items-center gap-2">
+                  <button className="w-8 h-8 rounded-full flex items-center justify-center  bg-gray-200 hover:text-white hover:bg-primary-light hover-duration-300">
+                    <Minus size={14} />
+                  </button>
+
+                  <span className="text-lg">
+                    <strong>{quantity}</strong>
+                  </span>
+                  <button className="w-8 h-8 rounded-full flex items-center justify-center  bg-gray-200 hover:text-white hover:bg-primary-light hover-duration-300">
+                    <Plus size={14} />
+                  </button>
+                </div>
+              </div>
+              <Button variant="primary" className="rounded-md border-none ml-2 ">
+                <span>
+                  <ShoppingCart size={18} />
+                </span>
+                <span>Add to Cart</span>
+              </Button>
+            </div>
+            <div className="flex items-center gap-4 mt-4 ">
+              <Button variant="outline" className=" rounded-md  ">
+                <span>
+                  <Heart size={18} />
+                </span>
+                <span>Add to wishlist</span>
+              </Button>
+            </div>
+          </div>
+
+          <p className="text-gray-600 mt-4">
+            Categories:
+            <span>
+              {categories.map((category) => (
+                <span className="text-gray-400"> {category.name}</span>
+              ))}
+            </span>
+          </p>
+          <p className="text-gray-600 mt-4 flex items-center">
+            Share:
+            <SocialIcons />
+          </p>
+        </section>
+      </div>
+      {/* REVIEWS, DESCRIPTION */}
+      <section className=" mb-10 px-2 py-4">
+        <div className="flex justify-center items-center gap-4">
+          <Button variant="dark" className=" border-none ">
+            <span>Description</span>
+          </Button>
+          <Button variant="dark" className=" border-none ">
+            <span>Additional Information</span>
+          </Button>
+          <Button variant="dark">
+            <span>Reviews</span>
+          </Button>
+        </div>
+        <span className="w-full h-[1px] block bg-gray-200" />
+        {/* CONTENT */}
+        <div className="p-4">
+          <p className="text-gray-400 mb-4">{description}</p>
+        </div>
+      </section>
+      {/* RELATED PRODUCTS */}
+      <div className="">
+        <h3 className="text-3xl font-semibold  pb-1">Releated products</h3>
+        <span className="w-14 h-1 block bg-primary-light" />
+
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 mb-10">
+          {product?.slice(0, 4).map((product) => <ProductCard product={product} key={product.id} />)}
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDetailsPage;

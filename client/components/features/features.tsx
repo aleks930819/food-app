@@ -14,7 +14,7 @@ const FeaturesItem = ({ title, icon }: FeaturesItemProps) => {
     <Link href="#" className="flex gap-3 group bg-white items-center shadow-lg px-2 py-4">
       <span
         className="bg-gray-100 text-primary-light rounded-full  p-3
-       group-hover:bg-primary-light group-hover:text-white transition-all duration-300 ease-in-out
+       group-hover:bg-primary-light group-hover:text-white hover-duration-300
       "
       >
         {icon}

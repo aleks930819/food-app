@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils';
 
 import style from './button.module.css';
 
-const { primary, outline } = style;
+const { primary, outline, dark } = style;
 
-type ButtonVariants = 'outline' | 'primary';
+type ButtonVariants = 'outline' | 'primary' | 'dark';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -21,6 +21,8 @@ const getVariant = (variant: ButtonVariants) => {
       return outline;
     case 'primary':
       return primary;
+    case 'dark':
+      return dark;
     default:
       return primary;
   }
@@ -34,7 +36,11 @@ const Button = ({
   ref,
   ...rest
 }: PropsWithChildren<ButtonProps>) => {
-  const classes = cn('px-4 py-2 rounded', getVariant(variant), className);
+  const classes = cn(
+    `px-4 py-2 rounded-sm transition-all duration-200 ease-in-out flex items-center gap-2`,
+    getVariant(variant),
+    className,
+  );
 
   return (
     <button onClick={onClick} ref={ref} className={classes} {...rest}>

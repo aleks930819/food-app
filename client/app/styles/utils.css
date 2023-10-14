@@ -77,3 +77,12 @@
   transform: translate(-50%, -50%);
   border-radius: 9999px;
 }
+
+.hover-duration-300 {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.hover-duration-500 {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}

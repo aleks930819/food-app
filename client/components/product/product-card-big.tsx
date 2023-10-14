@@ -8,6 +8,7 @@ import { Eye, Heart } from 'lucide-react';
 
 import { ReviewStars } from '@/components/review-stars';
 import { ClientOnly } from '@/components/client-only';
+import Link from 'next/link';
 
 const ProductActionButton = ({ icon, action }: { icon: React.ReactNode; action: () => void }) => {
   return (
@@ -66,7 +67,7 @@ const ProductCardBig = ({ product }: { product: Product }) => {
       transform group-hover:translate-y-0  group-hover:opacity-100
       "
           >
-            <button>More Info</button>
+            <Link href={`/products/${product.slug}`}>More Info</Link>
           </span>
         </div>
       </div>

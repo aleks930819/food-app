@@ -41,7 +41,7 @@ const CategoriesDropDown = ({
     <nav
       className={`${
         toggleCategoreis
-          ? `h-auto transform translate-y-0 opacity-100 w-[300px]`
+          ? `h-auto transform translate-y-0 opacity-100 w-[301px]`
           : `h-0 transform -translate-y-2 opacity-0`
       }
       absolute
@@ -49,7 +49,7 @@ const CategoriesDropDown = ({
        transition-all duration-300 ease-out
        `}
     >
-      <ul className="flex flex-col items-start py-4 px-2 gap-4">
+      <ul className="flex flex-col items-start py-4 px-2 gap-4 w-[301px]">
         {categories?.map((category) => (
           <li key={category.id}>
             <Link href={`/category/${category.slug}`} className=" flex items-center gap-2">

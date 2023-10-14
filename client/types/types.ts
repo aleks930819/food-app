@@ -9,6 +9,7 @@ export interface Product {
   reviews: number;
   discount: number;
   quantity: number;
+  gallery: BlogImage[];
 }
 
 export interface Category {

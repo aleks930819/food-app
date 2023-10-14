@@ -6,6 +6,7 @@ import { Timer, User } from 'lucide-react';
 import { getBlogs, getSingleBlog } from '@/actions';
 
 import { BlogGallery, SmallerBlog } from '@/components/blog';
+import NotFound from '@/app/404';
 
 const BlogDetailsPage = async ({
   params,
@@ -19,7 +20,7 @@ const BlogDetailsPage = async ({
   const blogs = await getBlogs();
 
   if (!blog) {
-    return <div>Blog not found</div>;
+    return <NotFound />;
   }
 
   const { title, image, description, createdAt, createdFrom, gallery } = blog[0];
@@ -33,7 +34,7 @@ const BlogDetailsPage = async ({
             alt={title}
             width={840}
             height={600}
-            className="object-cover rounded-md relative w-full h-64 transition-all duration-500 ease-in-out cursor-pointer"
+            className="object-cover rounded-md relative w-full h-64 hover-duration-500  cursor-pointer"
           />
           {/* INFO */}
           <div className="py-6 flex items-center gap-4 border-b-2  border-primary-light">

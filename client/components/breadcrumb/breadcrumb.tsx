@@ -46,7 +46,7 @@ const Breadcrumb = ({ homeElement, capitalizeLinks }: TBreadCrumbProps) => {
       </div>
 
       <ul className="flex absolute  top-0 left-0 text-white  w-full h-full text-center justify-center">
-        <li className="text-white text-lg mt-auto mb-auto   hover:text-primary-dark transition-all duration-300 ease-in-out">
+        <li className="text-white text-lg mt-auto mb-auto   hover:text-primary-dark hover-duration-300 ease-in-out">
           <Link href={'/'}>{homeElement}</Link>
         </li>
         {pathNames.length !== 0 && <Seperator />}
@@ -56,18 +56,10 @@ const Breadcrumb = ({ homeElement, capitalizeLinks }: TBreadCrumbProps) => {
           itemLink = formatLinkText(itemLink);
           return (
             <React.Fragment key={index}>
-              <li
-                className={`text-white mb-auto mt-auto  hover:text-primary-dark transition-all duration-300 ease-in-out`}
-              >
+              <li className={`text-white mb-auto mt-auto  hover:text-primary-dark hover-duration-300 ease-in-out`}>
                 {currentPath === link ? (
-                  // Check if the current path is a product page and if it is, display the word "Продукт"
-                  // To avoid displaying the product name in the breadcrumb
-                  //  TODO: Make this check more robust
-                  <span className="text-white text-lg">
-                    {pathNames[0] === 'products' && pathNames.length > 1 ? 'Product' : itemLink}
-                  </span>
+                  <span className="text-white">{itemLink}</span>
                 ) : (
-                  // <span className="text-gray-500">{itemLink}</span>
                   <Link href={href}>{itemLink}</Link>
                 )}
               </li>

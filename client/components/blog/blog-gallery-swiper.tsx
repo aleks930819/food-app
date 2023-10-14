@@ -56,7 +56,6 @@ const BlogGallerySwiper = ({ setShowModal, gallery, handleShowModal }: BlogGalle
           className="relative"
           ref={swiperRef}
           slidesPerView={1}
-          navigation
           onSlideChange={(swiper) => {
             setSwiperImageIndex(swiper.activeIndex);
           }}

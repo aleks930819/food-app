@@ -13,6 +13,7 @@ interface BlogCardProps {
   date: string;
   image: string;
   title: string;
+  slug: string;
   category: string;
   createdFrom: string;
   description: string;
@@ -35,7 +36,7 @@ export const cardVariants: Variants = {
   },
 };
 
-const BlogCard = ({ date, image, title, category, createdFrom, description }: BlogCardProps) => {
+const BlogCard = ({ date, image, title, category, createdFrom, description, slug }: BlogCardProps) => {
   const ref = useRef(null);
   const isInViewCard = useInView(ref, { once: true });
 
@@ -81,7 +82,7 @@ const BlogCard = ({ date, image, title, category, createdFrom, description }: Bl
           <p className="text-gray-400">{description.slice(0, 100) + '...'}</p>
 
           <Link
-            href="#"
+            href={`/blogs/${slug}`}
             className="text-primary-light font-bold inline-block px-4 py-2 mt-4 border border-primary-light
             hover:bg-primary-light hover:text-white transition-all duration-500 ease-in-out rounded-sm
             "
