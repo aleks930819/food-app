@@ -17,6 +17,12 @@ export interface Category {
   slug: string;
 }
 
+export interface BlogImage {
+  id: number;
+  name: string;
+  url: string;
+}
+
 export interface Blog {
   id: number;
   createdAt: string;
@@ -24,6 +30,7 @@ export interface Blog {
   image: string;
   title: string;
   slug: string;
+  gallery: BlogImage[];
   category: string;
   createdFrom: string;
   description: string;

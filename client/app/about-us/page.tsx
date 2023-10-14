@@ -20,8 +20,8 @@ const ICON_SIZE = 40;
 const AboutUsPage = () => {
   return (
     <div>
-      <div className="max-w-6xl mx-auto px-4 py-2 mt-10 flex items-center justify-center gap-10">
-        <div className="flex-1 grid grid-cols-2 gap-4 px-4 py-6">
+      <div className="max-w-6xl mx-auto px-2 md:px-4 py-2 mt-10 flex-col-reverse md:flex-row flex items-center justify-center md:gap-10">
+        <div className="flex-1 grid grid-cols-2 gap-4  md:px-4 py-6">
           <AboutUsFeaturesItems
             icon={<Undo2 size={ICON_SIZE} />}
             title="Return Policy"
