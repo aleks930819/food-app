@@ -29,7 +29,7 @@ const BottomHeader = async () => {
         </nav>
         {/* CART */}
         <nav className="flex items-center gap-2">
-          <Link href="#" className="bg-primary-dark flex items-center gap-2 px-4 py-2 rounded-full">
+          <Link href="/cart" className="bg-primary-dark flex items-center gap-2 px-4 py-2 rounded-full">
             <span className="font-bold flex items-center gap-2">
               <ShoppingCart size={18} />
               Cart
