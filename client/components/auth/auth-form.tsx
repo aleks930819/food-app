@@ -38,22 +38,25 @@ const AuthForm = () => {
   });
 
   useEffect(() => {
-    console.log(formState);
-    reset();
+    if (formState === 'signin') {
+      reset({ email: '', password: '' });
+    } else {
+      reset({ firstName: '', lastName: '', email: '', password: '' });
+    }
   }, [formState]);
 
   const onSubmit = async (data: SignInFormValues | SignUpFormValues) => {};
 
   return (
     <div
-      className={`fixed top-0 left-0  w-full h-full bg-black bg-opacity-50 z-50 transition-all duration-500 ease-in-out transform ${
+      className={`fixed top-0 left-0  w-full h-full bg-black bg-opacity-50 z-50 transition-all duration-300 ease-in-out transform ${
         isOpen ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div ref={ref} className="">
         <form
-          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-8
-          w-full sm:w-[45vw] md:w-[35vw]
+          className={`absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-8
+          w-[90%] sm:w-[45vw] md:w-[35vw]
         transition-all duration-500 ease-in-out
         ${isOpen ? 'opacity-100' : 'opacity-0'}
         `}

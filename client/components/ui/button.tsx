@@ -36,7 +36,7 @@ const Button = ({
   ref,
   ...rest
 }: PropsWithChildren<ButtonProps>) => {
-  const classes = cn(`px-4 py-2 rounded-sm transition-all duration-200 ease-in-out `, getVariant(variant), className);
+  const classes = cn(`px-4 py-3 rounded-sm transition-all duration-200 ease-in-out `, getVariant(variant), className);
 
   return (
     <button onClick={onClick} ref={ref} className={classes} {...rest}>

@@ -1,14 +1,11 @@
 .primary {
-  @apply py-4 px-6;
   @apply bg-primary-light   text-white font-bold hover:bg-secondary;
 }
 
 .dark {
-  @apply py-4 px-6;
   @apply bg-gray-200 hover:bg-primary-light text-gray-800 font-bold hover:text-white;
 }
 
 .outline {
   @apply border   text-gray-400 hover:bg-primary-light  border-gray-200  hover:border-primary-light transition-all  hover:text-white font-bold;
-  @apply py-2 px-6;
 }
