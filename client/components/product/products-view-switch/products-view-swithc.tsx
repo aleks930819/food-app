@@ -1,6 +1,6 @@
 'use client';
 
-import { LayoutList, Grid } from 'lucide-react';
+import { LayoutList, Grid2X2 } from 'lucide-react';
 import { useViewModeStore } from '@/lib/state/view-mode';
 
 const ProdcutsViewSwticher = () => {
@@ -14,7 +14,7 @@ const ProdcutsViewSwticher = () => {
         `}
         onClick={() => useViewModeStore.setState({ viewMode: 'grid' })}
       >
-        <Grid size={30} />
+        <Grid2X2 size={30} />
       </button>
       <button
         className={`

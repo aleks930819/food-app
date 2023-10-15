@@ -1,10 +1,27 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const Search = () => {
+  const [searchValue, setSearchValue] = React.useState('');
+  const router = useRouter();
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!searchValue) return;
+    router.push(`/search?name=${searchValue}`);
+
+    setSearchValue('');
+  };
+
   return (
     <div className="max-w-6xl mx-auto p-4">
-      <form className="flex  mx-auto items-center justify-center">
+      <form className="flex  mx-auto items-center justify-center" onSubmit={onSubmit}>
         <input
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
           type="text"
           placeholder="Search Product"
           className="border-2 rounded-top-left rounded-bottom-left px-4 py-2 w-full outline-none focus:border-primary-light transition-all duration-300 ease-in-out"

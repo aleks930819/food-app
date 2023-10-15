@@ -36,3 +36,11 @@ export interface Blog {
   createdFrom: string;
   description: string;
 }
+
+export interface QueryParams {
+  page?: number;
+  limit?: number;
+  sort?: string;
+  order?: string;
+  name?: string;
+}
