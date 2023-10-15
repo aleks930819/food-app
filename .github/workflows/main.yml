@@ -8,21 +8,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Navigate into the "client" folder
-      - name: Change directory to client
-        run: cd ./client
-      # Verify that the package.json file exists in the "client" directory
-      - name: List files in the client directory
-        run: ls
       # Install NPM dependencies, cache them correctly
       - name: Install Dependencies
+        working-directory: ./client
         run: npm install
       # Run npm run build
       - name: Build
         run: npm run build
+        working-directory: ./client
       # Run npm start
       - name: Start
         run: npm start
+        working-directory: ./client
       # Run Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
