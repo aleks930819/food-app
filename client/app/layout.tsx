@@ -10,6 +10,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 import { ScrollToTopButton } from '@/components/ui';
+import { AuthForm } from '@/components/auth';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Breadcrumb homeElement={'Home'} capitalizeLinks />
         <main>{children}</main>
         <ScrollToTopButton />
+        <AuthForm />
         <Footer />
       </body>
     </html>

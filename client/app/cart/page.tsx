@@ -1,7 +1,9 @@
-import { Button } from '@/components/ui';
-import { CircleDollarSign, Minus, Plus, Ship, X } from 'lucide-react';
+import { Minus, Plus, X } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+
+import { CartTotal, TableHead } from '@/components/cart';
+import { Button } from '@/components/ui';
 
 const cartProductsData = [
   {
@@ -95,18 +97,9 @@ const CartPage = () => {
     <div className="max-w-7xl mx-auto px-4 py-4">
       <div className="flex flex-col lg:flex-row items-center gap-10">
         {/* PRODUCTS */}
-        <table className="w-full lg:w-[70%] ">
-          <thead className="w-full">
-            <tr className="bg-primary-light text-lg text-white ">
-              <th className=""> </th>
-              <th className=""> </th>
-              <th className="p-4 text-start">Product</th>
-              <th className="p-4 text-start">Price</th>
-              <th className="p-4 text-start">Quantity</th>
-              <th className="p-4 text-start">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody className="w-full">
+        <table className="w-full lg:w-[60%] ">
+          <tbody className="">
+            {/* <TableHead /> */}
             {cartProductsData.map((product) => (
               <tr key={product.id} className="border-b border-gray-200  mb-4">
                 <td className="p-4 cart-table-row">
@@ -155,28 +148,7 @@ const CartPage = () => {
             ))}
           </tbody>
         </table>
-        {/* CART TOTAL */}
-        <section className="shadow-lg  rounded-lg px-10 py-2 w-full lg:w-[40%]">
-          <h3 className="text-2xl font-bold mt-10 mb-4 border-b border-gray-200 pb-4">Cart Totals</h3>
-
-          <p className="text-lg text-gray-500 mb-2 flex w-full justify-between">
-            Subtotal: <strong>$100</strong>
-          </p>
-
-          <p className="text-lg text-gray-500 mb-2 flex w-full justify-between">
-            Shipping: <strong>$20</strong>
-          </p>
-
-          <p className="text-lg text-gray-500 mb-2 flex w-full justify-between">
-            Total: <strong>$120</strong>
-          </p>
-          <Button variant="primary" className="w-3/4 rounded-md my-10 mx-auto">
-            <span>Proceed to Checkout</span>
-            <span>
-              <CircleDollarSign />
-            </span>
-          </Button>
-        </section>
+        <CartTotal />
       </div>
     </div>
   );

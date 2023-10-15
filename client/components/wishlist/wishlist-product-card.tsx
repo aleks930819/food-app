@@ -16,13 +16,13 @@ const WishlistProductCard = ({ product }: { product: Product }) => {
           <strong>${product.price.toFixed(2)}</strong>
         </p>
         <div className="flex items-center  gap-2">
-          <Button className="rounded-md">
+          <Button className="rounded-md flex items-center gap-2">
             <span>
               <X size={20} />
             </span>
             <span>Remove</span>
           </Button>
-          <Button variant="primary" className="rounded-md  ">
+          <Button variant="primary" className="rounded-md flex items-center gap-2  ">
             <span>
               <ShoppingCart size={20} />
             </span>
