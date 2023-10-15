@@ -11,6 +11,9 @@ jobs:
          # Navigate into the "client" folder
       - name: Change directory to client
         run: cd client
+        # Install NPM dependencies, cache them correctly
+      - name: Install Dependencies
+        run: npm install
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
