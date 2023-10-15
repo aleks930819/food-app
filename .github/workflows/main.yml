@@ -8,6 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+         # Navigate into the "client" folder
+      - name: Change directory to client
+        run: cd client
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
