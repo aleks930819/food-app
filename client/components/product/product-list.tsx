@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 import Image from 'next/image';
 import { Button } from '../ui';
 

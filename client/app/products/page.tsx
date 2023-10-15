@@ -1,7 +1,13 @@
+import { Metadata } from 'next';
 import { getProducts } from '@/actions';
 import { PageHeading } from '@/components/page-heading';
 import { ProdcutsViewSwticher, ProductCardBig } from '@/components/product';
 import ProductsView from '@/components/product/products-view';
+
+export const metadata: Metadata = {
+  title: 'Products',
+  description: 'Produc page',
+};
 
 const ProductsPage = async () => {
   const products = await getProducts();

@@ -1,6 +1,7 @@
 import { Undo2, Leaf, MessageSquare, CreditCard } from 'lucide-react';
 
 import { YearlySummary } from '@/components/yearly-summary';
+import { Metadata } from 'next';
 
 const AboutUsFeaturesItems = ({ icon, title, content }: { icon: React.ReactNode; title: string; content: string }) => {
   return (
@@ -16,6 +17,11 @@ const AboutUsFeaturesItems = ({ icon, title, content }: { icon: React.ReactNode;
 };
 
 const ICON_SIZE = 40;
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'About us page',
+};
 
 const AboutUsPage = () => {
   return (

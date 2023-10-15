@@ -8,7 +8,7 @@ import { ChevronDown } from 'lucide-react';
 import axios from 'axios';
 import useSWR from 'swr';
 
-import { Category } from '@/types/types';
+import { Category } from '@/types';
 
 const ICON_SIZE = 22;
 

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { toast } from 'react-hot-toast';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 
 interface WishListStore {
   items: Product[];

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 import 'swiper/css';
 
-import { BlogImage } from '@/types/types';
+import { BlogImage } from '@/types';
 import BlogGallerySwiper from './blog-gallery-swiper';
 import { ImageZoomHover } from '../ui';
 

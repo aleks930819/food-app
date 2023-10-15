@@ -4,7 +4,7 @@ import { MoveRight, MoveLeft } from 'lucide-react';
 import { useClickAway } from '@uidotdev/usehooks';
 
 import { useRef, useState } from 'react';
-import { BlogImage } from '@/types/types';
+import { BlogImage } from '@/types';
 
 const SwiperChangeButton = ({ direction, action }: { direction: string; action: () => void }) => {
   const className = direction === 'left' ? 'left-48' : 'right-48';

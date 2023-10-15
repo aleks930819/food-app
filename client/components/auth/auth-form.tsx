@@ -55,6 +55,7 @@ const AuthForm = () => {
     >
       <div ref={ref} className="">
         <form
+          data-testid="auth-form"
           className={`absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-8
           w-[90%] sm:w-[45vw] md:w-[35vw]
         transition-all duration-500 ease-in-out
@@ -96,7 +97,7 @@ const AuthForm = () => {
                 register={register('firstName')}
                 // TODO: fix this
                 // @ts-ignore
-                error={errors.firstName}
+                // error={errors.firstName}
               />
 
               <FormInput
@@ -107,7 +108,7 @@ const AuthForm = () => {
                 register={register('lastName')}
                 // TODO: fix this
                 // @ts-ignore
-                error={errors.lastName}
+                // error={errors.lastName}
               />
             </>
           )}
@@ -117,7 +118,7 @@ const AuthForm = () => {
             label="Email"
             className="mb-4"
             register={register('email')}
-            error={errors.email}
+            // error={errors.email}
           />
           <FormInput
             type="password"
@@ -125,7 +126,7 @@ const AuthForm = () => {
             label="Password"
             className="mb-4"
             register={register('password')}
-            error={errors.password}
+            // error={errors.password}
           />
 
           <Button type="submit" className="w-full mt-4" variant="primary">

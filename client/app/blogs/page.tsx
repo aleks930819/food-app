@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import { Calendar, User, ChevronRight } from 'lucide-react';
+import { Metadata } from 'next';
 
 import { getBlogs } from '@/actions';
 import { PageHeading } from '@/components/page-heading';
+
+export const metadata: Metadata = {
+  title: 'Blogs',
+  description: 'Blogs page',
+};
 
 const BlogsPage = async () => {
   const blogs = await getBlogs();

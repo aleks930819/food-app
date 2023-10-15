@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 import { Eye, Heart } from 'lucide-react';
 
 import { ReviewStars } from '@/components/review-stars';

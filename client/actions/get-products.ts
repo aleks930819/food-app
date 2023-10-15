@@ -1,4 +1,4 @@
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 import { performRequest } from '@/utils/axios';
 
 const getProducts = async () => {

@@ -6,7 +6,7 @@ import 'swiper/css';
 import Image from 'next/image';
 import React from 'react';
 import { useRef, useState } from 'react';
-import { BlogImage } from '@/types/types';
+import { BlogImage } from '@/types';
 import { ImageZoomHover } from '../ui';
 import { useClickAway } from '@uidotdev/usehooks';
 import { MoveLeft, MoveRight, X } from 'lucide-react';

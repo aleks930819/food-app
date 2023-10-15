@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Calendar, ChevronRight, Link, User } from 'lucide-react';
-import { Blog } from '@/types/types';
+import { Blog } from '@/types';
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
   if (!blog) return null;

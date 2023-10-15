@@ -1,4 +1,4 @@
-import { Blog } from '@/types/types';
+import { Blog } from '@/types';
 
 import { performRequest } from '@/utils/axios';
 

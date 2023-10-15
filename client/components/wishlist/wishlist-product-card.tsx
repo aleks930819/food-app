@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ShoppingCart, X } from 'lucide-react';
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 
 import { Button } from '../ui';
 

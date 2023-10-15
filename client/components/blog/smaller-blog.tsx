@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { Calendar } from 'lucide-react';
 
-import { Blog } from '@/types/types';
+import { Blog } from '@/types';
 
 const SmallerBlog = ({ blog }: { blog: Blog }) => {
   return (
