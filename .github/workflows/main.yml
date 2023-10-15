@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
       # Navigate into the "client" folder
       - name: Change directory to client
-        run: cd client
+        run: cd ./client
       # Verify that the package.json file exists in the "client" directory
       - name: List files in the client directory
         run: ls
