@@ -1,4 +1,14 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john@gmail.com",
+      "wishlist": [],
+      "cart": []
+    }
+  ],
   "products": [
     {
       "id": 1,
