@@ -11,6 +11,7 @@ import { Breadcrumb } from '@/components/breadcrumb';
 
 import { ScrollToTopButton } from '@/components/ui';
 import { AuthForm } from '@/components/auth';
+import { CookieConsentProvider } from '@/context';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',
@@ -22,12 +23,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <Breadcrumb homeElement={'Home'} capitalizeLinks />
-        <main>{children}</main>
-        <ScrollToTopButton />
-        <AuthForm />
-        <Footer />
+        <CookieConsentProvider>
+          <Header />
+          <Breadcrumb homeElement={'Home'} capitalizeLinks />
+          <main>{children}</main>
+          <ScrollToTopButton />
+          <AuthForm />
+          <Footer />
+        </CookieConsentProvider>
       </body>
     </html>
   );

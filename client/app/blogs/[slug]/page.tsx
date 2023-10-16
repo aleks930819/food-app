@@ -49,10 +49,10 @@ const BlogDetailsPage = async ({
           </div>
 
           {/* CONTENT */}
-          <div className="py-3">
+          <article className="py-3">
             <h1 className="text-3xl font-bold mb-4">{title}</h1>
             <p className="text-gray-400">{description}</p>
-          </div>
+          </article>
         </div>
 
         {/* RIGHT ASIDE */}

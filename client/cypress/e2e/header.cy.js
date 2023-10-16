@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Actions', () => {
+context('Header', () => {
   beforeEach(() => {
     cy.visit('/');
 

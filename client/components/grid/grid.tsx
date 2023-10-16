@@ -16,7 +16,7 @@ interface GridProps {
 }
 
 const Grid = ({ children, className, gridType }: PropsWithChildren<GridProps>) => {
-  return <div className={cn(gridStyles[gridType || 'default'], className)}>{children}</div>;
+  return <section className={cn(gridStyles[gridType || 'default'], className)}>{children}</section>;
 };
 
 export default Grid;

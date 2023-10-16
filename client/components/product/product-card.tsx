@@ -10,6 +10,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link
+      data-testid="product-card"
       href="#"
       className="shadow-xl rounded-md overflow-hidden inline-block relative hover:shadow-2xl md:hover:-translate-y-2 transition-all duration-300 ease-in-out"
     >

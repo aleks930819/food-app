@@ -18,8 +18,9 @@ const Search = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-4">
-      <form className="flex  mx-auto items-center justify-center" onSubmit={onSubmit}>
+      <form data-testid="search-form" className="flex  mx-auto items-center justify-center" onSubmit={onSubmit}>
         <input
+          data-testid="search-input"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           type="text"

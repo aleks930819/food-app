@@ -1,0 +1,204 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Organic Bananas",
+      "slug": "organic-bananas",
+      "price": 22.00,
+      "description": "Sumptuous, filling, and temptingly healthy, our Biona Organic Granola with Wild Berries is just the thing to get you out of bed. The goodness of rolled wholegrain oats are combined with a variety of tangy organic berries, and baked into crispy clusters that are as nutritious.",
+      "quantity": 22,
+      "gallery": [
+        {
+          "id": 1,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1455853828816-0c301a011711?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 2,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 3,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+        },
+        {
+          "id": 4,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Fruits & Vegetable",
+          "slug": "fruits-vegetable"
+        }
+      ],
+      "reviews": 4,
+      "discount": 0,
+      "imageURL": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Organic Bananas",
+      "slug": "organic-bananas",
+      "price": 22.00,
+      "description": "Sumptuous, filling, and temptingly healthy, our Biona Organic Granola with Wild Berries is just the thing to get you out of bed. The goodness of rolled wholegrain oats are combined with a variety of tangy organic berries, and baked into crispy clusters that are as nutritious.",
+      "quantity": 22,
+      "gallery": [
+        {
+          "id": 1,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1455853828816-0c301a011711?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 2,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 3,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+        },
+        {
+          "id": 4,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Fruits & Vegetable",
+          "slug": "fruits-vegetable"
+        }
+      ],
+      "reviews": 4,
+      "discount": 0,
+      "imageURL": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+    },
+    {
+      "id": 3,
+      "name": "Organic Bananas",
+      "slug": "organic-bananas",
+      "price": 22.00,
+      "description": "Sumptuous, filling, and temptingly healthy, our Biona Organic Granola with Wild Berries is just the thing to get you out of bed. The goodness of rolled wholegrain oats are combined with a variety of tangy organic berries, and baked into crispy clusters that are as nutritious.",
+      "quantity": 22,
+      "gallery": [
+        {
+          "id": 1,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1455853828816-0c301a011711?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 2,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 3,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+        },
+        {
+          "id": 4,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Fruits & Vegetable",
+          "slug": "fruits-vegetable"
+        }
+      ],
+      "reviews": 4,
+      "discount": 0,
+      "imageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Organic Bananas",
+      "slug": "organic-bananas",
+      "price": 22.00,
+      "description": "Sumptuous, filling, and temptingly healthy, our Biona Organic Granola with Wild Berries is just the thing to get you out of bed. The goodness of rolled wholegrain oats are combined with a variety of tangy organic berries, and baked into crispy clusters that are as nutritious.",
+      "quantity": 22,
+      "gallery": [
+        {
+          "id": 1,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1455853828816-0c301a011711?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 2,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 3,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+        },
+        {
+          "id": 4,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Fruits & Vegetable",
+          "slug": "fruits-vegetable"
+        }
+      ],
+      "reviews": 4,
+      "discount": 0,
+      "imageURL": "https://images.unsplash.com/photo-1596591868231-05e852efc96f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1992&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Organic Bananas",
+      "slug": "organic-bananas",
+      "price": 22.00,
+      "description": "Sumptuous, filling, and temptingly healthy, our Biona Organic Granola with Wild Berries is just the thing to get you out of bed. The goodness of rolled wholegrain oats are combined with a variety of tangy organic berries, and baked into crispy clusters that are as nutritious.",
+      "quantity": 22,
+      "gallery": [
+        {
+          "id": 1,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1455853828816-0c301a011711?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 2,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        },
+        {
+          "id": 3,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+        },
+        {
+          "id": 4,
+          "name": "photo",
+          "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Fruits & Vegetable",
+          "slug": "fruits-vegetable"
+        }
+      ],
+      "reviews": 4,
+      "discount": 0,
+      "imageURL": "https://images.unsplash.com/photo-1596591868231-05e852efc96f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1992&q=80"
+    }
+  ]
+}
