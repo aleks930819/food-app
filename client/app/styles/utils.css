@@ -87,6 +87,32 @@
   transition-timing-function: ease-in-out;
 }
 
+.categories-links {
+  color: #050000;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(5, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 15px rgba(5, 0, 0, 0.1);
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  top: 140%;
+  right: 0px;
+  z-index: 99;
+  text-align: end;
+}
+
+.categories-links.active {
+  visibility: visible;
+  opacity: 1;
+  top: 120%;
+}
+
 @media screen and (max-width: 1024px) {
   .cart-table-row {
     display: flex;

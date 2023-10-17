@@ -38,18 +38,8 @@ const CategoriesDropDown = ({
   categories: Category[] | null;
 }) => {
   return (
-    <nav
-      className={`${
-        toggleCategoreis
-          ? `h-auto transform translate-y-0 opacity-100 w-[301px]`
-          : `h-0 transform -translate-y-2 opacity-0`
-      }
-      absolute
-      top-full left-0 w-full bg-white z-50 shadow-lg rounded-md overflow-hidden text-black
-       transition-all duration-300 ease-out
-       `}
-    >
-      <ul className="flex flex-col items-start py-4 px-2 gap-4 w-[301px]">
+    <nav className={`categories-links ${toggleCategoreis && 'active'}`}>
+      <ul className="flex flex-col items-start gap-3">
         {categories?.map((category) => (
           <li key={category.id}>
             <Link href={`/category/${category.slug}`} className=" flex items-center gap-2">
@@ -86,7 +76,7 @@ const HeaderCategories = () => {
         className="relative"
       >
         <Link href="#" className="flex items-center gap-2 group">
-          <span className="font-bold  cursor-pointer">Categories</span>
+          <span className="font-bold  cursor-pointer relative">Categories</span>
           <ChevronDown size={18} className="transform group-hover:rotate-180 transition-all duration-300 ease-out" />
           {/* DROPDOWN */}
           <CategoriesDropDown toggleCategoreis={toggleCategories} categories={categories} />
