@@ -2,11 +2,11 @@
 
 import React from 'react';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Navigation, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
@@ -80,7 +80,7 @@ const OurTeam = () => {
         pagination={{ clickable: true }}
       >
         {OurTeamData.map((member) => (
-          <SwiperSlide>
+          <SwiperSlide key={member.name}>
             <div className="w-auto h-[320px] relative group rounded-md overflow-hidden">
               <Image
                 src={member.image}

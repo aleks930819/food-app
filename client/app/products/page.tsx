@@ -9,8 +9,17 @@ export const metadata: Metadata = {
   description: 'Products page',
 };
 
-const ProductsPage = async () => {
-  const data = await getProducts();
+interface ProductsPageProps {
+  searchParams: {
+    categoryId: string;
+    price: string;
+  };
+}
+
+const ProductsPage = async ({ searchParams }: ProductsPageProps) => {
+  const { categoryId } = searchParams;
+
+  const data = await getProducts({ query: { categoryId } });
   const products = data?.products;
 
   return (

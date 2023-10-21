@@ -1,8 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 
 import { Cherry, Bean, Apple, Milk, LeafyGreen, UtensilsCrossed } from 'lucide-react';
 
-import { Grid } from '@/components/grid';
+import { Grid } from '@/components/common';
 
 interface FeaturesItemProps {
   title: string;
@@ -12,11 +13,7 @@ interface FeaturesItemProps {
 const FeaturesItem = ({ title, icon }: FeaturesItemProps) => {
   return (
     <Link href="#" className="flex gap-3 group bg-white items-center shadow-lg px-2 py-4">
-      <span
-        className="bg-gray-100 text-primary-light rounded-full  p-3
-       group-hover:bg-primary-light group-hover:text-white hover-duration-300
-      "
-      >
+      <span className="bg-gray-100 text-primary-light rounded-full  p-3 group-hover:bg-primary-light group-hover:text-white hover-duration-300">
         {icon}
       </span>
       <h3>

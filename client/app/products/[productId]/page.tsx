@@ -3,7 +3,7 @@ import { Heart, Minus, Plus, ShoppingCart } from 'lucide-react';
 import { getProducts, getSingleProduct } from '@/actions';
 
 import NotFound from '@/app/not-found';
-import { ReviewStars } from '@/components/review-stars';
+import { ReviewStars } from '@/components/common/review-stars';
 import { Button, SocialIcons } from '@/components/ui';
 import { ProductCard, ProductGalleryImages } from '@/components/product';
 
@@ -21,7 +21,7 @@ const ProductDetailsPage = async ({
     return <NotFound />;
   }
 
-  const data = await getProducts({ query: { limit: 4, categryId: product.categoryId } });
+  const data = await getProducts({ query: { limit: 4, categoryId: product.categoryId } });
 
   const filterProducts = data?.products.filter((p) => p.id !== product.id);
 
@@ -113,14 +113,17 @@ const ProductDetailsPage = async ({
         </div>
       </section>
       {/* RELATED PRODUCTS */}
-      <div className="">
-        <h3 className="text-3xl font-semibold  pb-1">Releated products</h3>
-        <span className="w-14 h-1 block bg-primary-light" />
 
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 mb-10">
-          {filterProducts?.map((product) => <ProductCard product={product} key={product.id} />)}
-        </section>
-      </div>
+      {filterProducts?.length !== 0 && (
+        <div className="">
+          <h3 className="text-3xl font-semibold  pb-1">Releated products</h3>
+          <span className="w-14 h-1 block bg-primary-light" />
+
+          <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 mb-10">
+            {filterProducts?.map((product) => <ProductCard product={product} key={product.id} />)}
+          </section>
+        </div>
+      )}
     </div>
   );
 };

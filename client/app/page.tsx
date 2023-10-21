@@ -6,7 +6,7 @@ import { Hero } from '@/components/hero';
 import { LatestBlogs } from '@/components/latest-blogs';
 import { OurTeam } from '@/components/our-team';
 import { SpecialOffers } from '@/components/special-offers';
-import { YearlySummary } from '@/components/yearly-summary';
+import { YearlySummary } from '@/components/common';
 
 export default async function Home() {
   const data = await getProducts();

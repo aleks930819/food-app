@@ -7,11 +7,12 @@ const inter = Lexend({ subsets: ['latin'] });
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
-import { Breadcrumb } from '@/components/breadcrumb';
+import { Breadcrumb } from '@/components/common';
 
 import { ScrollToTopButton } from '@/components/ui';
 import { AuthForm } from '@/components/auth';
 import { CookieConsentProvider } from '@/context';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',

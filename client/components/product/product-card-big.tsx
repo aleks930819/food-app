@@ -6,8 +6,8 @@ import React from 'react';
 import { Product } from '@/types';
 import { Eye, Heart } from 'lucide-react';
 
-import { ReviewStars } from '@/components/review-stars';
-import { ClientOnly } from '@/components/client-only';
+import { ReviewStars } from '@/components/common';
+import { ClientOnly } from '@/components/common';
 import Link from 'next/link';
 
 const ProductActionButton = ({ icon, action }: { icon: React.ReactNode; action: () => void }) => {

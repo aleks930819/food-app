@@ -1,7 +1,7 @@
 import { Product } from '@/types';
 
 import { ProductCard } from '@/components/product';
-import { Grid } from '@/components/grid';
+import { Grid } from '@/components/common';
 
 const FeaturedProducts = ({ products }: { products: Product[] | undefined }) => {
   if (!products) return null;

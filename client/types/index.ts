@@ -58,11 +58,16 @@ export interface Blog {
 
 export interface QueryParams {
   page?: number;
-  categryId?: string;
+  categoryId?: string;
   limit?: number;
   sort?: string;
   order?: string;
   name?: string;
+}
+export interface StaticPage {
+  title: string;
+  slug: string;
+  content: string;
 }
 
 export interface User {

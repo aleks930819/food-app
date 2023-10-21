@@ -2,6 +2,7 @@
 @import url('./styles/scrollbar.css');
 @import url('./styles/animations.css');
 @import url('./styles/swipper.css');
+@import url('./styles/static-page/static-page.css');
 
 @tailwind base;
 @tailwind components;

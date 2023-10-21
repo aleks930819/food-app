@@ -1,0 +1,23 @@
+/* Spacing */
+.static-page h1,
+.static-page h2,
+.static-page h3,
+.static-page h4,
+.static-page h5,
+.static-page h6 {
+  margin-bottom: 1.2rem;
+}
+.static-page p {
+  margin-bottom: 1rem;
+}
+
+.static-page ul,
+.static-page ol {
+  margin-bottom: 1.2rem;
+  margin-left: 1.2rem;
+}
+
+.static-page ul li,
+.static-page ol li {
+  margin-bottom: 0.5rem;
+}

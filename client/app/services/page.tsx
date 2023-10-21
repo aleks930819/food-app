@@ -1,4 +1,4 @@
-import { Grid } from '@/components/grid';
+import { Grid } from '@/components/common/grid';
 import { ServicesCard } from '@/components/services';
 
 import { Truck, Leaf, Cherry } from 'lucide-react';

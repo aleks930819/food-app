@@ -7,7 +7,7 @@ import Cookies from 'js-cookie';
 
 import { useCookieConsent } from '@/context/cookies-context';
 
-import { ClientOnly } from '@/components/client-only';
+import { ClientOnly } from '@/components/common';
 import { Button } from '@/components/ui';
 
 const CookieConsent = () => {

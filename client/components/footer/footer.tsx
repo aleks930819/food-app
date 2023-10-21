@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Link from 'next/link';
 import BottomFooter from './bottom-footer';
 import FooterGalleryImageItem from './footer-gallery-image-item';

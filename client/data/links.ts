@@ -37,11 +37,11 @@ export const footerLinks = [
   },
   {
     title: 'Cookies Policy',
-    href: '/cookies-policy',
+    href: '/static/cookies-policy',
   },
   {
     title: 'Privacy Policy',
-    href: '/cookies-policy',
+    href: '/static/privacy-policy',
   },
 ];
 

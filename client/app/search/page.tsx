@@ -1,5 +1,5 @@
 import { getProducts } from '@/actions';
-import { Grid } from '@/components/grid';
+import { Grid } from '@/components/common/grid';
 import { ProductCard } from '@/components/product';
 import React from 'react';
 
