@@ -19,6 +19,7 @@ import { Separator } from '@/components/ui/separator';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { AlertModal } from '@/components/common/modals/alert-modal';
+import ApiAlert from '../common/api-alert/api-alert';
 
 interface SettingsFormProps {
   initialData: Store;
@@ -98,6 +99,8 @@ const SettingsForm = ({ initialData }: SettingsFormProps) => {
           </Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert title="test" description="test" variant="admin" />
     </>
   );
 };
