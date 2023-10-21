@@ -2,8 +2,10 @@ import Image from 'next/image';
 import React from 'react';
 
 import { Timer, User } from 'lucide-react';
+import editorJsHtml from 'editorjs-html';
 
 import { getBlogs, getSingleBlog } from '@/actions';
+import { formatDateFn } from '@/utils';
 
 import { BlogGallery, SmallerBlog } from '@/components/blog';
 import NotFound from '@/app/not-found';
@@ -19,18 +21,21 @@ const BlogDetailsPage = async ({
   const blog = await getSingleBlog({ slug });
   const blogs = await getBlogs();
 
-  if (!blog || blog.length === 0) {
+  if (!blog) {
     return <NotFound />;
   }
 
-  const { title, image, description, createdAt, createdFrom, gallery } = blog[0];
+  const { createdBy, createdAt, images, title, content } = blog;
+
+  const EditorJsToHtml = editorJsHtml();
+  const text = EditorJsToHtml.parse(JSON.parse(content)).join('');
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-2 mt-20">
       <section className="flex flex-col md:flex-row gap-10 ">
         <div className="w-full md:w-[70%]">
           <Image
-            src={image}
+            src={images[0].url}
             alt={title}
             width={840}
             height={600}
@@ -40,18 +45,24 @@ const BlogDetailsPage = async ({
           <div className="py-6 flex items-center gap-4 border-b-2  border-primary-light">
             <span className="flex items-center gap-1">
               <Timer size={20} className="text-primary-light" />
-              <time className="text-gray-400 text-sm">{createdAt}</time>
+              <time className="text-gray-400 text-sm">{formatDateFn(new Date(createdAt))}</time>
             </span>
             <span className="flex items-center gap-1">
               <User size={20} className="text-primary-light" />
-              <p className="text-gray-400 text-sm">{createdFrom}</p>
+              <p className="text-gray-400 text-sm">{createdBy}</p>
             </span>
           </div>
 
           {/* CONTENT */}
           <article className="py-3">
-            <h1 className="text-3xl font-bold mb-4">{title}</h1>
-            <p className="text-gray-400">{description}</p>
+            <section className="static-page">
+              <h1 className="text-3xl font-bold mb-4">{title}</h1>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: text || [],
+                }}
+              />
+            </section>
           </article>
         </div>
 
@@ -61,7 +72,7 @@ const BlogDetailsPage = async ({
             Gallery
             <span className="bg-primary-light w-12 block mb-2 mt-1 h-[2px]" />
           </p>
-          <BlogGallery gallery={gallery} />
+          <BlogGallery gallery={images} />
           <p className="text-2xl font-bold mb-4">
             Recent blogs
             <span className="bg-primary-light w-12 block mb-2 mt-1 h-[2px]" />

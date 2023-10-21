@@ -29,6 +29,7 @@ interface StaticProps {
 const formSchema = z.object({
   title: z.string(),
   images: z.object({ url: z.string() }).array(),
+  category: z.string(),
   content: z.string(),
   createdBy: z.string(),
 });
@@ -56,6 +57,7 @@ const BlogForm = ({ initialData }: StaticProps) => {
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       title: '',
+      category: '',
       createdBy: '',
       images: [],
       content: '',
@@ -138,6 +140,21 @@ const BlogForm = ({ initialData }: StaticProps) => {
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Category</FormLabel>
+                <FormControl>
+                  <Input disabled={loading} placeholder="Blog Article Category" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <div className="grid grid-cols-1 gap-8">
             <FormField
               control={form.control}
@@ -146,7 +163,7 @@ const BlogForm = ({ initialData }: StaticProps) => {
                 <FormItem>
                   <FormLabel>Title</FormLabel>
                   <FormControl>
-                    <Input disabled={loading} placeholder="Static Page Title" {...field} />
+                    <Input disabled={loading} placeholder="Blog Article Title" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

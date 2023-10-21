@@ -7,6 +7,10 @@ import LatestBlogSwipers from './latest-blogs-swiper';
 const LatestBlogs = async () => {
   const blogs = await getBlogs();
 
+  console.log(blogs);
+
+  if (!blogs) return null;
+
   return (
     <div className="mt-20 max-w-6xl px-4 py-2 mx-auto">
       <div className="text-center mb-6">

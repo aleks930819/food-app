@@ -44,16 +44,15 @@ export interface BlogImage {
 }
 
 export interface Blog {
-  id: number;
+  id: string;
   createdAt: string;
   updatedAt: string;
-  image: string;
+  images: ProductImage[];
   title: string;
   slug: string;
-  gallery: BlogImage[];
   category: string;
-  createdFrom: string;
-  description: string;
+  content: string;
+  createdBy: string;
 }
 
 export interface QueryParams {

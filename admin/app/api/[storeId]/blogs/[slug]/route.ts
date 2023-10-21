@@ -29,10 +29,14 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
     const { userId } = auth();
     const body = await req.json();
 
-    const { title, content, createdBy, images } = body;
+    const { title, content, createdBy, images, category } = body;
 
     if (!userId) {
       return new NextResponse('Unauthorized', { status: 401 });
+    }
+
+    if (!category) {
+      return new NextResponse('Missing category', { status: 400 });
     }
 
     if (!images || images.length === 0) {
@@ -65,6 +69,7 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
         slug,
         title,
         content,
+        category,
         createdBy,
         images: {
           deleteMany: {},

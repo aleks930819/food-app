@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { Calendar, User, ChevronRight } from 'lucide-react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 import { getBlogs } from '@/actions';
 import { PageHeading } from '@/components/page-heading';
+import { formatDateFn } from '@/utils';
 
 export const metadata: Metadata = {
   title: 'Blogs',
@@ -25,18 +27,24 @@ const BlogsPage = async () => {
           <div className="  mb-28 px-2" key={blog.id}>
             <div className="w-full h-64 relative group">
               <span className="blog-card-image-hover opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out" />
-              <img src={blog.image} alt="blog image" width={320} height={300} className="w-full h-full object-cover" />
+              <Image
+                src={blog.images[0].url}
+                alt="blog image"
+                width={320}
+                height={300}
+                className="w-full h-full object-cover"
+              />
 
               {/* CONTENT */}
               <div className="absolute -bottom-20 w-4/5 p-4 mx-auto left-0 right-0 bg-white shadow-md text-black text-center">
                 <span className="flex justify-between items-center w-full">
                   <time className="flex items-center gap-2">
                     <Calendar size={20} className="text-primary-light" />
-                    {blog.createdAt}
+                    {formatDateFn(new Date(blog.createdAt))}
                   </time>
                   <span className="flex items-center gap-2">
                     <User size={20} className="text-primary-light" />
-                    {blog.createdFrom}
+                    {blog.createdBy}
                   </span>
                 </span>
 

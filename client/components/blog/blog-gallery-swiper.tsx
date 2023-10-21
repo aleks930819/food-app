@@ -4,7 +4,7 @@ import { MoveRight, MoveLeft } from 'lucide-react';
 import { useClickAway } from '@uidotdev/usehooks';
 
 import { useRef, useState } from 'react';
-import { BlogImage } from '@/types';
+import { ProductImage } from '@/types';
 
 const SwiperChangeButton = ({ direction, action }: { direction: string; action: () => void }) => {
   const className = direction === 'left' ? 'left-48' : 'right-48';
@@ -23,12 +23,13 @@ const SwiperChangeButton = ({ direction, action }: { direction: string; action: 
 };
 
 interface BlogGallerySwiperProps {
+  // eslint-disable-next-line no-unused-vars
   setShowModal: (showModal: boolean) => void;
   handleShowModal: () => void;
-  gallery: BlogImage[];
+  gallery: ProductImage[];
 }
 
-const BlogGallerySwiper = ({ setShowModal, gallery, handleShowModal }: BlogGallerySwiperProps) => {
+const BlogGallerySwiper = ({ setShowModal, gallery }: BlogGallerySwiperProps) => {
   const [swiperImageIndex, setSwiperImageIndex] = useState(0);
 
   const ref: any = useClickAway(() => {
@@ -63,13 +64,13 @@ const BlogGallerySwiper = ({ setShowModal, gallery, handleShowModal }: BlogGalle
             setSwiperImageIndex(swiper.activeIndex);
           }}
         >
-          {gallery.map((image, i) => (
+          {gallery.map((image) => (
             <>
               <SwiperSlide className="w-full h-[400px] xl:h-[650px] relative" key={image.id}>
                 <div className="w-full h-[400px] xl:h-[650px] ">
                   <Image
                     src={image.url}
-                    alt={image.name}
+                    alt={''}
                     width={450}
                     height={300}
                     key={image.id}

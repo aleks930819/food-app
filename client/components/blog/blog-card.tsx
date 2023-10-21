@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { Calendar, ChevronRight, Link, User } from 'lucide-react';
+import { formatDateFn } from '@/utils';
+import { Calendar, ChevronRight, User } from 'lucide-react';
+
 import { Blog } from '@/types';
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
@@ -8,18 +10,24 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
   return (
     <div className="  mb-28 px-2">
       <div className="w-full h-64 relative">
-        <Image src={blog.image} alt="blog image" width={320} height={300} className="w-full h-full object-cover" />
+        <Image
+          src={blog.images[0].url}
+          alt="blog image"
+          width={320}
+          height={300}
+          className="w-full h-full object-cover"
+        />
 
         {/* CONTENT */}
         <div className="absolute -bottom-20 w-4/5 p-4 mx-auto left-0 right-0 bg-white shadow-md text-black text-center">
           <span className="flex justify-between items-center w-full">
             <time className="flex items-center gap-2">
               <Calendar size={20} className="text-primary-light" />
-              {blog.createdAt}
+              {formatDateFn(new Date(blog.createdAt))}
             </time>
             <span className="flex items-center gap-2">
               <User size={20} className="text-primary-light" />
-              {blog.createdFrom}
+              {blog.createdBy}
             </span>
           </span>
 

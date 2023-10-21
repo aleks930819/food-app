@@ -11,11 +11,7 @@ import { Blog } from '@/types';
 
 import BlogCard from './blog-card';
 
-const LatestBlogSwipers = ({ blogs }: { blogs: Blog[] | null }) => {
-  if (!blogs) return null;
-
-  if (!blogs) return null;
-
+const LatestBlogSwipers = ({ blogs }: { blogs: Blog[] }) => {
   return (
     <Swiper
       spaceBetween={20}
@@ -38,15 +34,14 @@ const LatestBlogSwipers = ({ blogs }: { blogs: Blog[] | null }) => {
       }}
     >
       {blogs.map((blog: Blog) => (
-        <SwiperSlide className="w-full px-2">
+        <SwiperSlide className="w-full px-2" key={blog.slug}>
           <BlogCard
+            category={blog.category}
             slug={blog.slug}
             title={blog.title}
-            description={blog.description}
-            category={blog.category}
-            createdFrom={blog.createdFrom}
+            createdFrom={blog.createdBy}
             date={blog.createdAt}
-            image={blog.image}
+            image={blog.images[0].url}
           />
         </SwiperSlide>
       ))}

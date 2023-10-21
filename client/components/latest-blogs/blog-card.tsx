@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { Variants } from 'framer-motion';
 import { useRef } from 'react';
+import { formatDateFn } from '@/utils';
 
 interface BlogCardProps {
   date: string;
@@ -16,7 +17,6 @@ interface BlogCardProps {
   slug: string;
   category: string;
   createdFrom: string;
-  description: string;
 }
 
 export const cardVariants: Variants = {
@@ -36,7 +36,7 @@ export const cardVariants: Variants = {
   },
 };
 
-const BlogCard = ({ date, image, title, category, createdFrom, description, slug }: BlogCardProps) => {
+const BlogCard = ({ date, image, title, createdFrom, slug, category }: BlogCardProps) => {
   const ref = useRef(null);
   const isInViewCard = useInView(ref, { once: true });
 
@@ -59,7 +59,9 @@ const BlogCard = ({ date, image, title, category, createdFrom, description, slug
           cursor-pointer"
         />
         <time>
-          <span className="absolute top-2 right-2 bg-gray-800 text-white px-2 py-1 rounded">{date}</span>
+          <span className="absolute top-2 right-2 bg-gray-800 text-white px-2 py-1 rounded">
+            {formatDateFn(new Date(date))}
+          </span>
         </time>
         <span className="blog-card-image-hover opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out" />
       </div>
@@ -68,7 +70,7 @@ const BlogCard = ({ date, image, title, category, createdFrom, description, slug
         <div className="w-full flex justify-between items-center pb-4 border-b">
           <span className="flex items-center gap-2">
             <Columns size={24} />
-            {category}
+            <span className="bg-primary-light text-white px-3 py-1 rounded-md">{category}</span>
           </span>
           <span className="flex items-center">
             <User size={24} />
@@ -79,7 +81,7 @@ const BlogCard = ({ date, image, title, category, createdFrom, description, slug
           <h3 className="text-xl font-bold mb-2">
             <Link href="#">{title.slice(0, 50) + '...'}</Link>
           </h3>
-          <p className="text-gray-400">{description.slice(0, 100) + '...'}</p>
+          <p className="text-gray-400">{title.slice(0, 100) + '...'}</p>
 
           <Link
             href={`/blogs/${slug}`}

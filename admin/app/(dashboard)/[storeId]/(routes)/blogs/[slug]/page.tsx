@@ -10,6 +10,7 @@ const BlogPage = async ({
     slug: string;
   };
 }) => {
+  console.log(params.slug);
   const blogArticle = await prismadb.blog.findUnique({
     where: {
       slug: params.slug,
@@ -19,6 +20,8 @@ const BlogPage = async ({
       images: true,
     },
   });
+
+  console.log(blogArticle);
 
   return (
     <div className="flex-col">

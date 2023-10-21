@@ -9,10 +9,14 @@ export async function POST(req: Request, { params }: { params: { storeId: string
     const { userId } = auth();
     const body = await req.json();
 
-    const { title, content, createdBy, images } = body;
+    const { title, content, createdBy, images, category } = body;
 
     if (!userId) {
       return new NextResponse('Unathenticated', { status: 401 });
+    }
+
+    if (!category) {
+      return new NextResponse('Missing category', { status: 400 });
     }
 
     if (!images || images.length === 0) {
@@ -41,6 +45,7 @@ export async function POST(req: Request, { params }: { params: { storeId: string
         title,
         slug,
         createdBy,
+        category,
         content,
         images: {
           createMany: {
