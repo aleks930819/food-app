@@ -100,8 +100,6 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
       },
     });
 
-    console.log(product);
-
     return NextResponse.json(product);
   } catch (err: any) {
     console.log('[PRODUCT_PATCH]', err);

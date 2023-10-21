@@ -25,7 +25,7 @@ const ImageUpload = ({ disabled, onChange, onRemove, value }: ImageUploadProps) 
   return (
     <ClientOnly>
       <div className="mb-4 flex itesm-center gap-4">
-        {value.map((url) => (
+        {value?.map((url) => (
           <div className="relative w-[200px] h-[200px] rounded-md overflow-hidden" key={url}>
             <div className="z-10 absolute top-2 right-2 ">
               <Button type="button" onClick={() => onRemove(url)} variant="destructive" size="icon">

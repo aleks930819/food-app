@@ -9,15 +9,18 @@ export async function GET(_req: Request, { params }: { params: { slug: string } 
       return new NextResponse('Missing slug', { status: 400 });
     }
 
-    const staticPage = await prismadb.staticPage.findUnique({
+    const blogArticle = await prismadb.blog.findUnique({
       where: {
         slug: params.slug,
       },
+      include: {
+        images: true,
+      },
     });
 
-    return NextResponse.json(staticPage);
+    return NextResponse.json(blogArticle);
   } catch (err: any) {
-    console.log('[STATIC_GET]', err);
+    console.log('[BLOG_GET]', err);
     return new NextResponse(err.message, { status: 500 });
   }
 }
@@ -26,10 +29,14 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
     const { userId } = auth();
     const body = await req.json();
 
-    const { title, content } = body;
+    const { title, content, createdBy, images } = body;
 
     if (!userId) {
       return new NextResponse('Unauthorized', { status: 401 });
+    }
+
+    if (!images || images.length === 0) {
+      return new NextResponse('Missing images', { status: 400 });
     }
 
     if (!title) {
@@ -40,27 +47,46 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
       return new NextResponse('Missing content', { status: 400 });
     }
 
+    if (!createdBy) {
+      return new NextResponse('Missing createdBy', { status: 400 });
+    }
+
     if (!params.slug) {
       return new NextResponse('Missing slug', { status: 400 });
     }
 
     const slug = slugifyString(title);
 
-    const staticPage = await prismadb.staticPage.updateMany({
+    await prismadb.blog.update({
       where: {
         slug: params.slug,
       },
       data: {
+        slug,
         title,
         content,
-        slug,
-        storeId: params.storeId,
+        createdBy,
+        images: {
+          deleteMany: {},
+        },
       },
     });
 
-    return NextResponse.json(staticPage);
+    const blogArticle = await prismadb.blog.update({
+      where: {
+        slug: params.slug,
+      },
+      data: {
+        images: {
+          createMany: {
+            data: [...images.map((image: { url: string }) => image)],
+          },
+        },
+      },
+    });
+    return NextResponse.json(blogArticle);
   } catch (err: any) {
-    console.log('[STATIC_PATCH]', err);
+    console.log('[BLOG_UPDATE]', err);
     return new NextResponse(err.message, { status: 500 });
   }
 }
@@ -76,7 +102,7 @@ export async function DELETE(_req: Request, { params }: { params: { storeId: str
       return new NextResponse('Missing size id', { status: 400 });
     }
 
-    const staticPage = await prismadb.staticPage.deleteMany({
+    const staticPage = await prismadb.blog.deleteMany({
       where: {
         slug: params.slug,
       },
@@ -84,7 +110,7 @@ export async function DELETE(_req: Request, { params }: { params: { storeId: str
 
     return NextResponse.json(staticPage);
   } catch (err: any) {
-    console.log('[STATIC_DELETE]', err);
+    console.log('[BLOG_DELETE]', err);
     return new NextResponse(err.message, { status: 500 });
   }
 }

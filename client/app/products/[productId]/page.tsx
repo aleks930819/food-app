@@ -3,7 +3,7 @@ import { Heart, Minus, Plus, ShoppingCart } from 'lucide-react';
 import { getProducts, getSingleProduct } from '@/actions';
 
 import NotFound from '@/app/not-found';
-import { ReviewStars } from '@/components/common/review-stars';
+import { ReviewStars } from '@/components/common';
 import { Button, SocialIcons } from '@/components/ui';
 import { ProductCard, ProductGalleryImages } from '@/components/product';
 
