@@ -8,7 +8,7 @@ import { Product } from '@/types';
 import { ProductCardBig } from '..';
 import { ProductList } from '..';
 
-const ProdcutsView = ({ products }: { products: Product[] | null }) => {
+const ProdcutsView = ({ products }: { products: Product[] | undefined }) => {
   const view = useViewModeStore((state) => state.viewMode);
 
   return (

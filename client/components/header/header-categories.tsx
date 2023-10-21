@@ -5,30 +5,31 @@ import Link from 'next/link';
 
 import { Cherry, Bean, Apple, Milk, LeafyGreen, UtensilsCrossed } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
-import axios from 'axios';
-import useSWR from 'swr';
+
+import useCategories from '@/hooks/use-categories';
 
 import { Category } from '@/types';
 
 const ICON_SIZE = 22;
 
-const IconForTheCategory = ({ id }: { id: number }) => {
-  switch (id) {
-    case 1:
-      return <Cherry size={ICON_SIZE} />;
-    case 2:
-      return <LeafyGreen size={ICON_SIZE} />;
-    case 3:
-      return <UtensilsCrossed size={ICON_SIZE} />;
-    case 4:
-      return <Apple size={ICON_SIZE} />;
-    case 5:
-      return <Milk size={ICON_SIZE} />;
-    case 6:
-      return <Bean size={ICON_SIZE} />;
-    default:
-      return <Cherry size={ICON_SIZE} />;
+const IconForTheCategory = ({ name }: { name: string }) => {
+  // Define a mapping of substrings to icons
+  const iconMapping = {
+    Fruit: <Cherry size={ICON_SIZE} />,
+    Bread: <LeafyGreen size={ICON_SIZE} />,
+    Breakfast: <UtensilsCrossed size={ICON_SIZE} />,
+    Organic: <Apple size={ICON_SIZE} />,
+    Dairy: <Milk size={ICON_SIZE} />,
+    Seeds: <Bean size={ICON_SIZE} />,
+  };
+
+  for (const key in iconMapping) {
+    if (name.includes(key)) {
+      return iconMapping[key as keyof typeof iconMapping];
+    }
   }
+
+  return <Cherry size={ICON_SIZE} />;
 };
 const CategoriesDropDown = ({
   toggleCategoreis,
@@ -42,11 +43,11 @@ const CategoriesDropDown = ({
       <ul className="flex flex-col items-start gap-3">
         {categories?.map((category) => (
           <li key={category.id}>
-            <Link href={`/category/${category.slug}`} className=" flex items-center gap-2">
+            <Link href={`/category/${category.slug}`} className=" flex items-center gap-name.includes('Fruit')">
               <span className="bg-gray-100 text-primary-light rounded-full  p-3">
-                <IconForTheCategory id={category.id} />
+                <IconForTheCategory name={category.name} />
               </span>
-              <span className="text-sm hover:text-primary-dark transition-colors duration-200 ease-out cursor-pointer">
+              <span className="text-sm hover:text-primary-dark transition-colors duration-200 ease-out cursor-pointer ml-2">
                 {category.name}
               </span>
             </Link>
@@ -60,13 +61,7 @@ const CategoriesDropDown = ({
 const HeaderCategories = () => {
   const [toggleCategories, setToggleCategories] = useState(false);
 
-  // fetching the data from the app/api to avoid expose of the admin url
-  const fetcher = async () => {
-    const categories = await axios.get('/api/categories');
-    return categories.data;
-  };
-
-  const { data: categories } = useSWR('/api/categories', fetcher);
+  const { categories } = useCategories();
 
   return (
     <ul>

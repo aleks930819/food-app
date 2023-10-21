@@ -6,13 +6,13 @@ import 'swiper/css';
 import Image from 'next/image';
 import React from 'react';
 import { useRef, useState } from 'react';
-import { BlogImage } from '@/types';
+import { ProductImage } from '@/types';
 import { ImageZoomHover } from '../ui';
 import { useClickAway } from '@uidotdev/usehooks';
 import { MoveLeft, MoveRight, X } from 'lucide-react';
 
 interface ProductGalleryImagesProps {
-  gallery: BlogImage[];
+  gallery: ProductImage[];
 }
 
 const ProductImageGalleryThumbnails = ({
@@ -23,8 +23,9 @@ const ProductImageGalleryThumbnails = ({
   imageWidth,
   imageHeight,
 }: {
-  gallery: BlogImage[];
+  gallery: ProductImage[];
   currentImage: number;
+  // eslint-disable-next-line no-unused-vars
   onGalleryImagesClick?: (i: number) => void;
   setCurrentImage: React.Dispatch<React.SetStateAction<number>>;
   imageWidth: number;
@@ -34,6 +35,7 @@ const ProductImageGalleryThumbnails = ({
     <div className="flex flex-wrap items-center gap-2 p-2  md:mt-6">
       {gallery.map((image, i) => (
         <div
+          key={i}
           className={`${currentImage === i ? 'border-2 border-primary-light' : ''} h-24 overflow-hidden rounded-md  `}
           style={{
             // RECALCULATE THE WIDTH OF THE IMAGE TO FIT THE CONTAINER WIDTH
@@ -62,8 +64,9 @@ const FullImageSlider = ({
   gallery,
   setShowFullImageSlider,
 }: {
+  // eslint-disable-next-line no-unused-vars
   setShowFullImageSlider: (showFullImageSlider: boolean) => void;
-  gallery: BlogImage[];
+  gallery: ProductImage[];
 }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const swiperRef = useRef<any>(null);

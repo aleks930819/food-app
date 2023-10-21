@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { navLinks, LinkType } from '@/data/links';
 
 import HeaderCategories from './header-categories';
-import { ClientOnly } from '@/components/client-only';
 
 const BottomHeader = async () => {
   return (

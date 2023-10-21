@@ -9,7 +9,8 @@ import { SpecialOffers } from '@/components/special-offers';
 import { YearlySummary } from '@/components/yearly-summary';
 
 export default async function Home() {
-  const products = await getProducts();
+  const data = await getProducts();
+  const products = data?.products;
 
   return (
     <main className="px-4 md:px-0">

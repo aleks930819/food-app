@@ -3,7 +3,11 @@ import { NextResponse } from 'next/server';
 import { getCategories } from '@/actions';
 
 export async function GET() {
-  const res = await getCategories();
+  try {
+    const res = await getCategories();
 
-  return NextResponse.json(res);
+    return NextResponse.json(res);
+  } catch (err) {
+    console.error(err);
+  }
 }

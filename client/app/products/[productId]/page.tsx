@@ -11,33 +11,35 @@ const ProductDetailsPage = async ({
   params,
 }: {
   params: {
-    slug: string;
+    productId: string;
   };
 }) => {
-  const { slug } = params;
-  const product = await getSingleProduct({ slug });
+  const { productId } = params;
+  const product = await getSingleProduct({ productId });
 
-  const products = await getProducts();
-
-  if (!product || product.length === 0) {
+  if (!product) {
     return <NotFound />;
   }
 
-  const { imageURL, discount, reviews, description, price, quantity, name, categories, gallery } = product[0];
+  const data = await getProducts({ query: { limit: 4, categryId: product.categoryId } });
+
+  const filterProducts = data?.products.filter((p) => p.id !== product.id);
+
+  const { name, images, price, quantity, description, category } = product;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-0 md:py-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 mb-10">
         {/* IMAGES */}
-        <ProductGalleryImages gallery={gallery} />
+        <ProductGalleryImages gallery={images} />
         {/* INFO */}
         <section className=" px-2 py-4 text-start">
           <h2 className="text-3xl font-bold mb-4">{name}</h2>
           <span className="mb-4 block">
-            <ReviewStars num={reviews} />
+            <ReviewStars num={4} />
           </span>
           <p className="text-2xl  mb-4">
-            <strong>${price.toFixed(2)}</strong>
+            <strong>${price}</strong>
           </p>
           <p className="text-gray-400 mb-4">{description}</p>
 
@@ -79,13 +81,10 @@ const ProductDetailsPage = async ({
               </Button>
             </div>
           </div>
-
           <p className="text-gray-600 mt-4">
             Categories:
             <span>
-              {categories.map((category) => (
-                <span className="text-gray-400"> {category.name}</span>
-              ))}
+              <span className="text-gray-400"> {category.name}</span>
             </span>
           </p>
           <p className="text-gray-600 mt-4 flex items-center">
@@ -119,7 +118,7 @@ const ProductDetailsPage = async ({
         <span className="w-14 h-1 block bg-primary-light" />
 
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 mb-10">
-          {products?.slice(0, 4).map((product) => <ProductCard product={product} key={product.id} />)}
+          {filterProducts?.map((product) => <ProductCard product={product} key={product.id} />)}
         </section>
       </div>
     </div>

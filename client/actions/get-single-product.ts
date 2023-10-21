@@ -2,14 +2,14 @@ import { Product } from '@/types';
 
 import { performRequest } from '@/utils/axios';
 
-const getSingleProduct = async ({ slug }: { slug: string }) => {
+const getSingleProduct = async ({ productId }: { productId: string }) => {
   try {
-    const product = await performRequest<Product[]>({
-      endpoint: `/products?slug=${slug}`,
+    const product = await performRequest<Product | undefined>({
+      endpoint: `/products/${productId}`,
     });
     return product;
   } catch (err) {
-    return null;
+    return undefined;
   }
 };
 

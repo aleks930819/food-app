@@ -27,16 +27,10 @@ const ProductCardBig = ({ product }: { product: Product }) => {
   return (
     <ClientOnly>
       <div className=" p-4 rounded-lg shadow-md group group-hover:shadow-none transition-all duration-300 ease-in-out">
-        <div
-          className="w-full max-w-full border relative
-    group-hover:border-primary-light transition-all duration-300 ease-in-out  group-hover:border-[4px]
-   rounded-lg
-    group-hover:scale-105
-    border-secondary px-2 py-4 flex flex-col  items-center"
-        >
+        <div className="w-full max-w-full border relative group-hover:border-primary-light transition-all duration-300 ease-in-out  group-hover:border-[4px] rounded-lg group-hover:scale-105 border-secondary px-2 py-4 flex flex-col  items-center">
           <div className="w-full h-96">
             <Image
-              src={product.imageURL}
+              src={product.images[0].url}
               alt={product.name}
               width={450}
               height={350}
@@ -48,15 +42,10 @@ const ProductCardBig = ({ product }: { product: Product }) => {
             <strong>${product.price}</strong>
           </p>
           <p className="pb-10">
-            <ReviewStars num={product.reviews} />
+            <ReviewStars num={4} />
           </p>
 
-          <div
-            className="absolute flex flex-col gap-2
-       right-0 top-0 mr-4 mt-4 transition-all duration-300 ease-in-out
-       transform translate-x-[-20px] group-hover:translate-x-0 opacity-0 group-hover:opacity-100
-      "
-          >
+          <div className="absolute flex flex-col gap-2 right-0 top-0 mr-4 mt-4 transition-all duration-300 ease-in-out transform translate-x-[-20px] group-hover:translate-x-0 opacity-0 group-hover:opacity-100">
             <ProductActionButton icon={<Eye size={22} />} action={() => {}} />
             <ProductActionButton icon={<Heart size={22} />} action={() => {}} />
           </div>
@@ -67,7 +56,7 @@ const ProductCardBig = ({ product }: { product: Product }) => {
       transform group-hover:translate-y-0  group-hover:opacity-100
       "
           >
-            <Link href={`/products/${product.slug}`}>More Info</Link>
+            <Link href={`/products/${product.id}`}>More Info</Link>
           </span>
         </div>
       </div>

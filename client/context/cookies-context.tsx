@@ -25,7 +25,7 @@ interface CookieConsentProviderProps {
   children: ReactNode;
 }
 
-function CookieConsentProvider({ children }: CookieConsentProviderProps): JSX.Element {
+function CookieConsentProvider({ children }: CookieConsentProviderProps): React.JSX.Element {
   const [isConsentGiven, setConsentGiven] = useState(false);
 
   const localConsent = Cookies.get('fp-localConsent');

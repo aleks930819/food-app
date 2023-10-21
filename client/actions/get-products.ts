@@ -1,4 +1,4 @@
-import { Product, QueryParams } from '@/types';
+import { MetaData, Product, QueryParams } from '@/types';
 import { performRequest } from '@/utils/axios';
 
 import queryString from 'query-string';
@@ -7,7 +7,12 @@ interface GetProductsParams {
   query?: QueryParams;
 }
 
-const getProducts = async ({ query }: GetProductsParams = {}): Promise<Product[] | null> => {
+interface ProductsResponse {
+  products: Product[];
+  meta_data: MetaData;
+}
+
+const getProducts = async ({ query }: GetProductsParams = {}): Promise<ProductsResponse | undefined> => {
   if (!query) {
     query = {
       page: 1,
@@ -20,12 +25,12 @@ const getProducts = async ({ query }: GetProductsParams = {}): Promise<Product[]
   const queryStr = queryString.stringify(query);
 
   try {
-    const products = await performRequest<Product[]>({
+    const products = await performRequest<ProductsResponse>({
       endpoint: `/products?${queryStr}`,
     });
     return products;
   } catch (err) {
-    return null;
+    return undefined;
   }
 };
 

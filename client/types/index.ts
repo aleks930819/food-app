@@ -1,21 +1,40 @@
+export interface ProductImage {
+  id: 'string';
+  productId: 'string';
+  url: 'string';
+  createdAt: 'string';
+  updatedAt: 'string';
+}
+export interface MetaData {
+  total_count: number;
+  total_pages: number;
+  current_page: number;
+}
+
 export interface Product {
-  id: number;
+  id: string;
+  storeId: string;
+  categoryId: string;
+  quantity: number;
   name: string;
   slug: string;
-  price: number;
   description: string;
-  imageURL: string;
-  categories: Category[];
-  reviews: number;
-  discount: number;
-  quantity: number;
-  gallery: BlogImage[];
+  price: string;
+  isFeatured: boolean;
+  isArchived: boolean;
+  createdAt: string;
+  updatedAt: string;
+  images: ProductImage[];
+  category: Category;
 }
 
 export interface Category {
-  id: number;
+  id: string;
   name: string;
   slug: string;
+  storeId: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface BlogImage {
@@ -39,6 +58,7 @@ export interface Blog {
 
 export interface QueryParams {
   page?: number;
+  categryId?: string;
   limit?: number;
   sort?: string;
   order?: string;

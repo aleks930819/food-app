@@ -3,10 +3,12 @@ import { Product } from '@/types';
 import { ProductCard } from '@/components/product';
 import { Grid } from '@/components/grid';
 
-const FeaturedProducts = ({ products }: { products: Product[] | null }) => {
+const FeaturedProducts = ({ products }: { products: Product[] | undefined }) => {
   if (!products) return null;
 
-  const firstFourProductsArray = products.slice(0, 4);
+  const checkIfProductsAreLessThanFour = products?.length < 4;
+
+  const productsArray = checkIfProductsAreLessThanFour ? products : products?.slice(0, 4);
 
   return (
     <div className="mt-10 max-w-6xl mx-auto">
@@ -16,8 +18,8 @@ const FeaturedProducts = ({ products }: { products: Product[] | null }) => {
       </div>
       <section className="pt-2   gap-8">
         <Grid gridType="fourColumn">
-          {firstFourProductsArray.map((product: Product) => (
-            <ProductCard product={product} />
+          {productsArray.map((product: Product) => (
+            <ProductCard product={product} key={product.id} />
           ))}
         </Grid>
       </section>

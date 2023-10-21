@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
 import { getProducts } from '@/actions';
 import { PageHeading } from '@/components/page-heading';
-import { ProdcutsViewSwticher, ProductCardBig } from '@/components/product';
+import { ProdcutsViewSwticher } from '@/components/product';
 import ProductsView from '@/components/product/products-view';
 
 export const metadata: Metadata = {
   title: 'Products',
-  description: 'Produc page',
+  description: 'Products page',
 };
 
 const ProductsPage = async () => {
-  const products = await getProducts();
+  const data = await getProducts();
+  const products = data?.products;
 
   return (
     <div className="max-w-6xl mx-auto py-6">
