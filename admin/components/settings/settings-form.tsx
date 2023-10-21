@@ -20,6 +20,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { AlertModal } from '@/components/common/modals/alert-modal';
 import ApiAlert from '../common/api-alert/api-alert';
+import { useOrigin } from '@/hooks/user-origin';
 
 interface SettingsFormProps {
   initialData: Store;
@@ -35,6 +36,7 @@ const SettingsForm = ({ initialData }: SettingsFormProps) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const params = useParams();
+  const origin = useOrigin();
   const router = useRouter();
   const form = useForm<SettingsFormValues>({
     resolver: zodResolver(formSchmea),
@@ -100,7 +102,7 @@ const SettingsForm = ({ initialData }: SettingsFormProps) => {
         </form>
       </Form>
       <Separator />
-      <ApiAlert title="test" description="test" variant="admin" />
+      <ApiAlert title="NEXT_PUBLIC_API_URL" description={`${origin}/api/${params.storeId}`} variant="admin" />
     </>
   );
 };

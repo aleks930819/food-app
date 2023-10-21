@@ -36,8 +36,8 @@ const ApiAlert = ({ description, title, variant = 'public' }: ApiAlertProps) => 
           {textMap[variant]}
         </Badge>
       </AlertTitle>
-      <AlertDescription className="flex items-center justify-between  w-full overflow-x-auto text-sm text-gray-500 bg-gray-100 rounded-md p-2 mt-4">
-        <code className="">
+      <AlertDescription className="flex items-center justify-between  w-full overflow-x-auto text-sm bg-gray-100 rounded-md p-2 mt-4">
+        <code className="font-bold text-black">
           <pre>{description}</pre>
         </code>
         <Button variant="outline" size="icon" onClick={() => onCopy(description)}>

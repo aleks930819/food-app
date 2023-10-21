@@ -1,10 +1,12 @@
 'use client';
 
+import React from 'react';
+
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
 
-const MainNav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
+const MainNav = ({ className }: React.HTMLAttributes<HTMLElement>) => {
   const pathname = usePathname();
   const params = useParams();
   const routes = [
@@ -12,6 +14,16 @@ const MainNav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => 
       href: `/${params.storeId}`,
       label: 'Dashboard',
       active: pathname === `/${params.storeId}`,
+    },
+    {
+      href: `/${params.storeId}/products`,
+      label: 'Products',
+      active: pathname === `/${params.storeId}/products`,
+    },
+    {
+      href: `/${params.storeId}/categories`,
+      label: 'Categories',
+      active: pathname === `/${params.storeId}/categories`,
     },
 
     {
