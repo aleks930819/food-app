@@ -9,13 +9,27 @@ datasource db {
 }
 
 model Store {
-  id         String     @id @default(cuid())
-  name       String
-  userId     String
-  products   Product[]  @relation("StoreToProduct")
-  categories Category[] @relation("StoreToCategory")
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  id          String       @id @default(cuid())
+  name        String
+  userId      String
+  products    Product[]    @relation("StoreToProduct")
+  categories  Category[]   @relation("StoreToCategory")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  staticPages StaticPage[] @relation("StoreToStaticPage")
+}
+
+model StaticPage {
+  id        String   @id @default(uuid())
+  title     String
+  slug      String   @unique
+  content   String   @db.VarChar(10000)
+  storeId   String
+  store     Store    @relation("StoreToStaticPage", fields: [storeId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([storeId])
 }
 
 model Product {
