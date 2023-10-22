@@ -9,7 +9,11 @@ import { SpecialOffers } from '@/components/special-offers';
 import { YearlySummary } from '@/components/common';
 
 export default async function Home() {
-  const data = await getProducts();
+  const query = {
+    limit: 4,
+  };
+  const data = await getProducts({ query });
+
   const products = data?.products;
 
   return (

@@ -6,10 +6,6 @@ import { Grid } from '@/components/common';
 const FeaturedProducts = ({ products }: { products: Product[] | undefined }) => {
   if (!products) return null;
 
-  const checkIfProductsAreLessThanFour = products?.length < 4;
-
-  const productsArray = checkIfProductsAreLessThanFour ? products : products?.slice(0, 4);
-
   return (
     <div className="mt-10 max-w-6xl mx-auto">
       <div>
@@ -18,7 +14,7 @@ const FeaturedProducts = ({ products }: { products: Product[] | undefined }) => 
       </div>
       <section className="pt-2   gap-8">
         <Grid gridType="fourColumn">
-          {productsArray.map((product: Product) => (
+          {products.map((product: Product) => (
             <ProductCard product={product} key={product.id} />
           ))}
         </Grid>

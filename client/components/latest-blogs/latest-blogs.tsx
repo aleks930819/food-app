@@ -7,7 +7,6 @@ import LatestBlogSwipers from './latest-blogs-swiper';
 const LatestBlogs = async () => {
   const blogs = await getBlogs();
 
-  console.log(blogs);
 
   if (!blogs) return null;
 

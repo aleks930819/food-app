@@ -4,3 +4,9 @@
   padding: 1.2rem 1.5rem;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .static-page {
+    padding: 1.2rem 1rem;
+  }
+}

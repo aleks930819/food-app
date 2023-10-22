@@ -16,12 +16,12 @@ const BlogGallery = ({ gallery }: { gallery: ProductImage[] }) => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 mb-6">
+    <div className="grid grid-cols-4 gap-2 md:grid-cols-3 md:gap-4 mb-6">
       {gallery.map((image) => (
         <div
           key={image.id}
           onClick={handleShowModal}
-          className="w-full h-20 overflow-hidden rounded-md relative hover-duration-500 ease-in-out cursor-pointer"
+          className=" h-20 w-20 lg:w-full lg:h-20 overflow-hidden rounded-md relative hover-duration-500 ease-in-out cursor-pointer"
         >
           <Image
             src={image.url}

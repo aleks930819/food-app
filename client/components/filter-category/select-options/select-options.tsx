@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter, usePathname } from 'next/navigation';
 
 interface SelectOptionsProps {
   title: string;
@@ -8,20 +7,11 @@ interface SelectOptionsProps {
     name: string;
     value: string;
   }[];
+  // eslint-disable-next-line no-unused-vars
+  handleSelect: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const SelectOptions = ({ title, options }: SelectOptionsProps) => {
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = e.target.value;
-
-    router.push(`${pathname}${pathname.includes('?') ? '&' : '?'}${selectedValue}`, {
-      scroll: false,
-    });
-  };
-
+const SelectOptions = ({ title, options, handleSelect }: SelectOptionsProps) => {
   return (
     <select className="border border-gray-300 rounded-md px-4 py-2 mt-4" onChange={handleSelect}>
       <label htmlFor="">{title}</label>

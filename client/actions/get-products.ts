@@ -24,6 +24,8 @@ const getProducts = async ({ query }: GetProductsParams = {}): Promise<ProductsR
 
   const queryStr = queryString.stringify(query);
 
+  console.log(queryStr);
+
   try {
     const products = await performRequest<ProductsResponse>({
       endpoint: `/products?${queryStr}`,

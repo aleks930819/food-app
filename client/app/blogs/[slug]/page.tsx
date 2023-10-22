@@ -25,6 +25,8 @@ const BlogDetailsPage = async ({
     return <NotFound />;
   }
 
+  const filteredBlogs = blogs ? blogs?.filter((blog) => blog.slug !== slug) : [];
+
   const { createdBy, createdAt, images, title, content } = blog;
 
   const EditorJsToHtml = editorJsHtml();
@@ -73,11 +75,16 @@ const BlogDetailsPage = async ({
             <span className="bg-primary-light w-12 block mb-2 mt-1 h-[2px]" />
           </p>
           <BlogGallery gallery={images} />
-          <p className="text-2xl font-bold mb-4">
-            Recent blogs
-            <span className="bg-primary-light w-12 block mb-2 mt-1 h-[2px]" />
-          </p>
-          {blogs?.map((blog) => <SmallerBlog blog={blog} key={blog.id} />)}
+
+          {/* RECENT BLOGS */}
+          {filteredBlogs && filteredBlogs.length > 0 ? (
+            <p className="text-2xl font-bold mb-4">
+              Recent blogs
+              <span className="bg-primary-light w-12 block mb-2 mt-1 h-[2px]" />
+            </p>
+          ) : null}
+
+          {filteredBlogs?.map((blog) => <SmallerBlog blog={blog} key={blog.id} />)}
         </aside>
       </section>
     </div>
