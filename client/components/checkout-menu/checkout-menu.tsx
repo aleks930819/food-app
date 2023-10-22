@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useClickAway } from '@uidotdev/usehooks';
 import { useCartStore } from '@/lib/state';
 
-import useCheckoutMenu from '@/lib/state/checkout-menu';
+import { useCheckoutMenuState } from '@/lib/state';
 
 import CheckoutMenuItem from './checkout-menu-item';
 import { ClientOnly } from '@/components/common';
@@ -15,9 +15,9 @@ import { Button } from '@/components/ui';
 const CheckoutMenu = () => {
   const router = useRouter();
   const items = useCartStore((state) => state.items);
-  const isOpen = useCheckoutMenu((state) => state.isOpen);
+  const isOpen = useCheckoutMenuState((state) => state.isOpen);
   const totalCartPrice = useCartStore((state) => state.totalCartItemsPrice);
-  const hideCheckoutMenu = useCheckoutMenu((state) => state.hideCheckoutMenu);
+  const hideCheckoutMenu = useCheckoutMenuState((state) => state.hideCheckoutMenu);
 
   const ref = useClickAway(() => {
     hideCheckoutMenu();

@@ -2,12 +2,13 @@
 
 import { ShoppingCart } from 'lucide-react';
 
-import { CheckoutMenu } from '@/app/checkout-menu';
-import useCheckoutMenu from '@/lib/state/checkout-menu';
+import { useCheckoutMenuState } from '@/lib/state';
 import { useCartStore } from '@/lib/state';
 
+import { CheckoutMenu } from '@/components/checkout-menu';
+
 const CartButton = () => {
-  const showCheckoutMenu = useCheckoutMenu((state) => state.showCheckoutMenu);
+  const showCheckoutMenu = useCheckoutMenuState((state) => state.showCheckoutMenu);
   const cart = useCartStore((state) => state.items);
 
   return (

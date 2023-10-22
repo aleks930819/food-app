@@ -32,11 +32,13 @@ const ProductImageGalleryThumbnails = ({
   imageHeight: number;
 }) => {
   return (
-    <div className="flex flex-wrap items-center gap-2 p-2  md:mt-6">
+    <div className="flex flex-wrap items-center gap-2 p-2   md:mt-6">
       {gallery.map((image, i) => (
         <div
           key={i}
-          className={`${currentImage === i ? 'border-2 border-primary-light' : ''} h-24 overflow-hidden rounded-md  `}
+          className={`${
+            currentImage === i ? 'border-2 border-primary-light' : ''
+          } h-28 lg:h32   overflow-hidden rounded-md  `}
           style={{
             // RECALCULATE THE WIDTH OF THE IMAGE TO FIT THE CONTAINER WIDTH
             // 4 IMAGES PER ROW (25%) - 8px GAP BETWEEN IMAGES
@@ -95,9 +97,9 @@ const FullImageSlider = ({
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-40 bg-black  flex items-center justify-center gap-2 opacity-0 hover:opacity-100 transition-all duration-500 ease-in-out">
+    <div className="fixed top-0 left-0 w-full h-full z-40 bg-black  flex items-center pb-20 justify-center gap-2 opacity-0 hover:opacity-100 transition-all duration-500 ease-in-out">
       {/* CURRENT IMAGE INDEX */}
-      <div className=" absolute top-20 left-5 md:top-10 md:left-10 transform translate-x-1/2 -translate-y-1/2 flex items-center gap-2 text-white z-50">
+      <div className=" absolute top-10 left-8 md:top-10 md:left-10 transform translate-x-1/2 -translate-y-1/2 flex items-center gap-2 text-white z-50">
         <span className="text-white text-2xl">
           {currentImage + 1} / {gallery.length}
         </span>
@@ -105,7 +107,7 @@ const FullImageSlider = ({
       {/* CLOSE BUTTON */}
       <button
         onClick={() => setShowFullImageSlider(false)}
-        className="absolute  top-20 right-6 md:top-10 md:left-10transform translate-x-1/2 -translate-y-1/2 flex items-center gap-2 text-white z-50"
+        className="absolute  top-10 right-8 md:top-10 md:left-10transform translate-x-1/2 -translate-y-1/2 flex items-center gap-2 text-white z-50"
       >
         <X size={35} />
       </button>
