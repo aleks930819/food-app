@@ -1,23 +1,34 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import { Product } from '@/types';
-import { Eye, Heart } from 'lucide-react';
+import { Eye, Heart, ShoppingCart } from 'lucide-react';
 
 import { ReviewStars } from '@/components/common';
 import { ClientOnly } from '@/components/common';
-import Link from 'next/link';
+import { Tooltip } from '@/components/common/tooltip';
 
-const ProductActionButton = ({ icon, action }: { icon: React.ReactNode; action: () => void }) => {
+const ProductActionButton = ({
+  icon,
+  action,
+  tooltip,
+}: {
+  icon: React.ReactNode;
+  action: () => void;
+  tooltip: string;
+}) => {
   return (
-    <button
-      onClick={action}
-      className="bg-gray-400 flex justify-center items-center text-white text-lg rounded-full w-10 h-10 hover:bg-primary-light transition-all duration-300 ease-in-out "
-    >
-      {icon}
-    </button>
+    <Tooltip tooltip={tooltip} position="left">
+      <button
+        onClick={action}
+        className="bg-gray-400 flex justify-center items-center text-white text-lg rounded-full w-10 h-10 hover:bg-primary-light transition-all duration-300 ease-in-out "
+      >
+        {icon}
+      </button>
+    </Tooltip>
   );
 };
 
@@ -46,8 +57,9 @@ const ProductCardBig = ({ product }: { product: Product }) => {
           </p>
 
           <div className="absolute flex flex-col gap-2 right-0 top-0 mr-4 mt-4 transition-all duration-300 ease-in-out transform translate-x-[-20px] group-hover:translate-x-0 opacity-0 group-hover:opacity-100">
-            <ProductActionButton icon={<Eye size={22} />} action={() => {}} />
-            <ProductActionButton icon={<Heart size={22} />} action={() => {}} />
+            <ProductActionButton tooltip="Quick View" icon={<Eye size={22} />} action={() => {}} />
+            <ProductActionButton tooltip="Add to wishlist" icon={<Heart size={22} />} action={() => {}} />
+            <ProductActionButton tooltip="Add to cart" icon={<ShoppingCart size={22} />} action={() => {}} />
           </div>
           <span
             className="bg-primary-light text-white px-4 py-2 rounded-full

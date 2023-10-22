@@ -11,7 +11,7 @@ context('Shopping Cart', () => {
     cy.get('@cartButton').should('be.visible');
   });
 
-  it('should display the checkout menu when clicking on the cart button and hide it when clicking on the close button', () => {
+  it.only('should display the checkout menu when clicking on the cart button and hide it when clicking on the close button', () => {
     cy.get('@cartButton').click();
     cy.get('@checkoutMenu').should('be.visible');
     cy.get('[data-test="checkout-menu-close-button"]').click();

@@ -10,19 +10,20 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <Link
+    <div
       data-test="product-card"
-      href={`/products/${product.id}`}
-      className="shadow-xl rounded-md overflow-hidden inline-block relative hover:shadow-2xl md:hover:-translate-y-2 transition-all duration-300 ease-in-out"
+      className="shadow-xl  rounded-md  inline-block relative hover:shadow-2xl md:hover:-translate-y-2 transition-all duration-300 ease-in-out"
     >
       <figure className="  overflow-hidden ">
-        <Image
-          src={product.images[0].url}
-          alt={product.name}
-          width={400}
-          height={270}
-          className="object-cover w-full h-56 "
-        />
+        <Link href={`/products/${product.id}`}>
+          <Image
+            src={product.images[0].url}
+            alt={product.name}
+            width={400}
+            height={270}
+            className="object-cover w-full h-56 "
+          />
+        </Link>
       </figure>
       <section className="p-4">
         <h3 className="font-bold text-lg">{product.name}</h3>
@@ -40,7 +41,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {<Star size={16} className="inline-block" fill="#fff" stroke="#fff" strokeWidth={1} />}
         </span>
       </span>
-    </Link>
+    </div>
   );
 };
 
