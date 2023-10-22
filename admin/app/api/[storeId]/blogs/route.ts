@@ -67,6 +67,22 @@ export async function GET(req: Request, { params }: { params: { storeId: string 
   const { searchParams } = new URL(req.url);
   const limit = parseInt(searchParams.get('limit') || '10');
   try {
+    const totalArticles = await prismadb.blog.count({
+      where: {
+        storeId: params.storeId,
+      },
+    });
+
+    const totalPages = Math.ceil(totalArticles / limit);
+
+    let currentPage = 1;
+
+    if (searchParams.get('page') !== null) {
+      currentPage = parseInt(searchParams.get('page')!);
+    }
+
+    const skip = (currentPage - 1) * limit;
+
     const blogArticles = await prismadb.blog.findMany({
       where: {
         storeId: params.storeId,
@@ -78,9 +94,17 @@ export async function GET(req: Request, { params }: { params: { storeId: string 
         createdAt: 'desc',
       },
       take: limit,
+      skip,
     });
 
-    return NextResponse.json(blogArticles);
+    return NextResponse.json({
+      blogs: blogArticles,
+      meta_data: {
+        total_count: totalArticles,
+        total_pages: totalPages,
+        current_page: currentPage,
+      },
+    });
   } catch (err) {
     console.log('[BLOG_GET]', err);
     return new NextResponse('Internal Error', { status: 500 });

@@ -35,8 +35,8 @@ const FooterLinksColumn = ({ links }: { links: LinkType[] | undefined }) => {
 };
 
 const Footer = async () => {
-  const blogs = await getBlogs();
-
+  const data = await getBlogs();
+  const blogs = data?.blogs;
   // transform blog data to links suitable for footer
   const blogLinks = blogs?.slice(0, 4).map((blog) => ({
     title: blog.title,

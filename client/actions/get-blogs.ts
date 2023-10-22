@@ -1,4 +1,4 @@
-import { Blog, QueryParams } from '@/types';
+import { Blog, MetaData, QueryParams } from '@/types';
 
 import { performRequest } from '@/utils/axios';
 
@@ -8,22 +8,31 @@ interface GetBlogsParams {
   query?: QueryParams;
 }
 
-const getBlogs = async ({ query }: GetBlogsParams = {}): Promise<Blog[] | undefined> => {
+interface BlogsResponse {
+  blogs: Blog[];
+  meta_data: MetaData;
+}
+
+const getBlogs = async ({ query }: GetBlogsParams = {}): Promise<BlogsResponse | undefined> => {
+  console.log(query);
   if (!query) {
     query = {
       page: 1,
       limit: 10,
-      sort: 'id',
       order: 'desc',
     };
   }
 
   const queryStr = queryString.stringify(query);
 
+  console.log(queryStr);
+
   try {
-    const blogs = await performRequest<Blog[]>({
+    const blogs = await performRequest<BlogsResponse>({
       endpoint: `/blogs?${queryStr}`,
     });
+
+    console.log(blogs.blogs.length);
     return blogs;
   } catch (err) {
     return undefined;

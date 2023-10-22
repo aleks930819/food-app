@@ -115,7 +115,7 @@ export async function GET(req: Request, { params }: { params: { storeId: string 
     return NextResponse.json({
       products,
       meta_data: {
-        total_count: 2,
+        total_count: totalProducts,
         total_pages: totalPages,
         current_page: currentPage,
       },

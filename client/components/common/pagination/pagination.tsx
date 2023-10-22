@@ -65,11 +65,14 @@ const Pagination = ({ currentPage, totalPages }: { currentPage: number; totalPag
     router.push(url);
   };
 
+  const navigationButtonsClass =
+    'disabled:opacity-50 hover:text-white disabled:hover:cursor-not-allowed hover:bg-primary-light hover:border-primary-light hover-duration-300  font-bold border-2 border-primary-dark text-primary-dark px-4 py-2 focus:outline-none  ';
+
   return (
     <motion.nav
       className="flex items-center justify-center mt-10"
       variants={variants}
-      initial="hidden"
+      initial="visibile"
       animate={isInView ? 'visible' : 'hidden'}
       ref={ref}
     >
@@ -78,9 +81,7 @@ const Pagination = ({ currentPage, totalPages }: { currentPage: number; totalPag
           disabled={currentPage === 1}
           aria-label="Previous"
           onClick={handlePrevPage}
-          className={` ${
-            currentPage === 1 ? 'opacity-50' : ''
-          } disabled:opacity-50  font-bold border-2 border-primary-dark text-primary-dark px-4 py-2 rounded-l-md focus:outline-none mr-4`}
+          className={` ${currentPage === 1 ? 'opacity-50' : ''} ${navigationButtonsClass} rounded-l-md  mr-4`}
         >
           <span>
             <span className="sr-only">Previous</span>
@@ -108,9 +109,7 @@ const Pagination = ({ currentPage, totalPages }: { currentPage: number; totalPag
           onClick={handleNextPage}
           aria-label="Next"
           disabled={currentPage === totalPages}
-          className={`${
-            currentPage === totalPages ? 'opacity-50' : ''
-          } disabled:opacity-50 border-2 border-primary-dark text-primary-dark px-4 py-2 rounded-r-md focus:outline-none ml-4`}
+          className={`${currentPage === totalPages ? 'opacity-50' : ''} ${navigationButtonsClass} rounded-r-md  ml-4`}
         >
           <span>
             <span className="sr-only">Next</span>

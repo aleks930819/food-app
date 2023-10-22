@@ -4,16 +4,35 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 import { getBlogs } from '@/actions';
-import { PageHeading } from '@/components/page-heading';
+
 import { formatDateFn } from '@/utils';
+
+import { PageHeading } from '@/components/page-heading';
+import { Pagination } from '@/components/common';
 
 export const metadata: Metadata = {
   title: 'Blogs',
   description: 'Blogs page',
 };
 
-const BlogsPage = async () => {
-  const blogs = await getBlogs();
+interface BlogsPageProps {
+  searchParams: {
+    page: string;
+  };
+}
+
+const BlogsPage = async ({ searchParams }: BlogsPageProps) => {
+  const query = {
+    page: Number(searchParams.page) || 1,
+    limit: 10,
+  };
+
+  const data = await getBlogs({ query });
+
+  if (!data) return null;
+
+  const blogs = data?.blogs;
+  const metaData = data?.meta_data;
 
   return (
     <div className="max-w-6xl mx-auto py-6">
@@ -66,6 +85,7 @@ const BlogsPage = async () => {
           </div>
         ))}
       </section>
+      <Pagination currentPage={metaData?.current_page} totalPages={metaData?.total_pages} />
     </div>
   );
 };

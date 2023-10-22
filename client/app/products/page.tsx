@@ -25,7 +25,7 @@ const ProductsPage = async ({ searchParams }: ProductsPageProps) => {
   const query = {
     categoryId,
     page: Number(searchParams.page) || 1,
-    limit: 1,
+    limit: 10,
   };
 
   const data = await getProducts({ query });
