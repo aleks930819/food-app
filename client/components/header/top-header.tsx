@@ -1,8 +1,10 @@
 'use client';
 
-import { useAuthModalState } from '@/lib/state/auth-modal';
+import { useAuthModalState } from '@/lib/state';
+
 import { Heart } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import React from 'react';
 
 const TopHeaderActionButton = ({
   text,

@@ -1,17 +1,14 @@
+/* eslint-disable no-unused-vars */
 import { create } from 'zustand';
 import { toast } from 'react-hot-toast';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
 import { Product } from '@/types';
 
-export interface CartItem extends Product {
-  cartItemQuantity: number;
-}
-
 interface CartStore {
-  items: CartItem[];
+  items: Product[];
   totalCartItemsPrice: number;
-  addItem: (data: CartItem) => void;
+  addItem: (data: Product) => void;
   removeItem: (id: string) => void;
   removeAll: () => void;
   increaseItemQuantity: (id: string) => void;
@@ -23,7 +20,7 @@ const useCart = create(
     (set, get) => ({
       items: [],
       totalCartItemsPrice: 0,
-      addItem: (data: CartItem) => {
+      addItem: (data: Product) => {
         const currentItems = get().items;
         const existingItem = currentItems.find((item) => item.id === data.id);
 
@@ -42,23 +39,24 @@ const useCart = create(
       },
       removeItem: (id: string) => {
         const currentItems = get().items;
-        const removedItem = currentItems.find((item) => Number(item.id) === Number(id));
+        const removedItem = currentItems.find((item) => item.id === id);
 
         if (removedItem) {
           set({
-            items: [...currentItems.filter((item) => Number(item.id) !== Number(id))],
-            totalCartItemsPrice: get().totalCartItemsPrice - Number(removedItem.price) * removedItem.cartItemQuantity,
+            items: [...currentItems.filter((item) => item.id !== id)],
+            totalCartItemsPrice:
+              get().totalCartItemsPrice - Number(removedItem.price) * removedItem.cartItemQuantity || 1,
           });
         }
       },
 
       increaseItemQuantity: (id: string) => {
         const currentItems = get().items;
-        const item = currentItems.find((item) => Number(item.id) === Number(id));
+        const item = currentItems.find((item) => item.id === id);
 
         if (item) {
           if (item.cartItemQuantity >= item.quantity) {
-            return toast.error('Item quantity cannot be more than available quantity.');
+            return toast.error('Sorry, you cannot request more items than what is available.');
           }
           item.cartItemQuantity += 1;
           set({
@@ -70,7 +68,7 @@ const useCart = create(
 
       decreaseItemQuantity: (id: string) => {
         const currentItems = get().items;
-        const item = currentItems.find((item) => Number(item.id) === Number(id));
+        const item = currentItems.find((item) => item.id === id);
 
         if (item) {
           if (item.cartItemQuantity > 1) {
@@ -81,7 +79,7 @@ const useCart = create(
             });
           } else {
             set({
-              items: [...currentItems.filter((item) => Number(item.id) !== Number(id))],
+              items: [...currentItems.filter((item) => item.id !== id)],
               totalCartItemsPrice: get().totalCartItemsPrice - Number(item.price),
             });
           }

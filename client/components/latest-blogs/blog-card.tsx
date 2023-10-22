@@ -81,7 +81,6 @@ const BlogCard = ({ date, image, title, createdFrom, slug, category }: BlogCardP
           <h3 className="text-xl font-bold mb-2">
             <Link href="#">{title.slice(0, 50) + '...'}</Link>
           </h3>
-          <p className="text-gray-400">{title.slice(0, 100) + '...'}</p>
 
           <Link
             href={`/blogs/${slug}`}

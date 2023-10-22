@@ -1,7 +1,7 @@
 'use client';
 
 import { LayoutList, Grid2X2 } from 'lucide-react';
-import { useViewModeStore } from '@/lib/state/view-mode';
+import { useViewModeStore } from '@/lib/state';
 import { useWindowSize } from '@uidotdev/usehooks';
 
 const ProdcutsViewSwticher = () => {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useViewModeStore } from '@/lib/state/view-mode';
+import { useViewModeStore } from '@/lib/state';
 import { Category, Product } from '@/types';
 
 import { ProductCardBig } from '..';

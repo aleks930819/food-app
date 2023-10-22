@@ -6,8 +6,10 @@ interface ViewModeState {
   setListView: () => void;
 }
 
-export const useViewModeStore = create<ViewModeState>((set) => ({
+const useViewModeStore = create<ViewModeState>((set) => ({
   viewMode: 'grid',
   setGridView: () => set({ viewMode: 'grid' }),
   setListView: () => set({ viewMode: 'list' }),
 }));
+
+export default useViewModeStore;

@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
-
+import { Toaster } from 'react-hot-toast';
 const inter = Lexend({ subsets: ['latin'] });
 
 import { Header } from '@/components/header';
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         <CookieConsentProvider>
+          <Toaster position="bottom-center" />
           <Header />
           <Breadcrumb homeElement={'Home'} capitalizeLinks />
           <main>{children}</main>

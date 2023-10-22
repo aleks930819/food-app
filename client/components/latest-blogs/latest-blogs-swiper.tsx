@@ -34,7 +34,7 @@ const LatestBlogSwipers = ({ blogs }: { blogs: Blog[] }) => {
       }}
     >
       {blogs.map((blog: Blog) => (
-        <SwiperSlide className="w-full px-2" key={blog.slug}>
+        <SwiperSlide className="w-full p-2" key={blog.slug}>
           <BlogCard
             category={blog.category}
             slug={blog.slug}

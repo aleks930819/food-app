@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Cherry, Bean, Apple, Milk, LeafyGreen, UtensilsCrossed } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
 
-import useCategories from '@/hooks/use-categories';
+import { useCategories } from '@/hooks';
 
 import { Category } from '@/types';
 
@@ -43,7 +43,7 @@ const CategoriesDropDown = ({
       <ul className="flex flex-col items-start gap-3">
         {categories?.map((category) => (
           <li key={category.id}>
-            <Link href={`/category/${category.slug}`} className=" flex items-center gap-name.includes('Fruit')">
+            <Link href={`/products?categoryId=${category.id}`} className=" flex items-center">
               <span className="bg-gray-100 text-primary-light rounded-full  p-3">
                 <IconForTheCategory name={category.name} />
               </span>

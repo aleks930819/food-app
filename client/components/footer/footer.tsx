@@ -35,10 +35,10 @@ const FooterLinksColumn = ({ links }: { links: LinkType[] | undefined }) => {
 };
 
 const Footer = async () => {
-  const data = await getBlogs();
+  const data = await getBlogs({ query: { limit: 4 } });
   const blogs = data?.blogs;
   // transform blog data to links suitable for footer
-  const blogLinks = blogs?.slice(0, 4).map((blog) => ({
+  const blogLinks = blogs?.map((blog) => ({
     title: blog.title,
     href: `/blogs/${blog.slug}`,
   }));

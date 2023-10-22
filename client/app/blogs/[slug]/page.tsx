@@ -19,7 +19,8 @@ const BlogDetailsPage = async ({
 }) => {
   const { slug } = params;
   const blog = await getSingleBlog({ slug });
-  const blogs = await getBlogs();
+  const data = await getBlogs();
+  const blogs = data?.blogs;
 
   if (!blog) {
     return <NotFound />;
@@ -41,7 +42,7 @@ const BlogDetailsPage = async ({
             alt={title}
             width={840}
             height={600}
-            className="object-cover rounded-md relative w-full h-64 hover-duration-500  cursor-pointer"
+            className="object-cover h-96 rounded-md relative w-full md:h-auto hover-duration-500  cursor-pointer"
           />
           {/* INFO */}
           <div className="py-6 flex items-center gap-4 border-b-2  border-primary-light">

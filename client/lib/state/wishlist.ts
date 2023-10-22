@@ -6,7 +6,9 @@ import { Product } from '@/types';
 
 interface WishListStore {
   items: Product[];
+  // eslint-disable-next-line no-unused-vars
   addItem: (data: Product) => void;
+  // eslint-disable-next-line no-unused-vars
   removeItem: (id: string) => void;
   removeAll: () => void;
 }

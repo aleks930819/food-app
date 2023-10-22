@@ -1,8 +1,11 @@
 import React from 'react';
+import { Eye } from 'lucide-react';
 import Image from 'next/image';
 
 import { Product } from '@/types';
-import { Button } from '@/components/ui';
+import Link from 'next/link';
+
+import { AddToCartButton } from '@/components/common';
 
 const ProductList = ({ product }: { product: Product }) => {
   return (
@@ -24,9 +27,15 @@ const ProductList = ({ product }: { product: Product }) => {
           <strong>${product.price}</strong>
         </p>
         {/* ACTIONS */}
-        <div className="px-4 py-4 mt-auto ">
-          <Button className="mr-2">View</Button>
-          <Button className="">Add to cart</Button>
+        <div className="flex items-center gap-2 px-4 py-4 mt-auto ">
+          <Link
+            href={`/products/${product.id}`}
+            className="mr-2 rounded-md bg-primary-light  px-4 py-3  transition-all duration-200 ease-in-out  text-white font-bold hover:bg-secondary flex items-center gap-2"
+          >
+            <Eye size={16} />
+            View
+          </Link>
+          <AddToCartButton product={product} />
         </div>
       </div>
     </div>

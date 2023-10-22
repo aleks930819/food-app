@@ -1,6 +1,6 @@
 'use client';
 
-import { useAuthModalState } from '@/lib/state/auth-modal';
+import { useAuthModalState } from '@/lib/state';
 import React, { useEffect, useState } from 'react';
 
 import { yupResolver } from '@hookform/resolvers/yup';

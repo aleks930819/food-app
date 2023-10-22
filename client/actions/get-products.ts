@@ -28,6 +28,11 @@ const getProducts = async ({ query }: GetProductsParams = {}): Promise<ProductsR
     const products = await performRequest<ProductsResponse>({
       endpoint: `/products?${queryStr}`,
     });
+
+    products.products.forEach((product) => {
+      product.cartItemQuantity = 1;
+    });
+
     return products;
   } catch (err) {
     return undefined;

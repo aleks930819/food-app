@@ -6,8 +6,10 @@ interface AuthModalState {
   hideAuthModal: () => void;
 }
 
-export const useAuthModalState = create<AuthModalState>((set) => ({
+const useAuthModalState = create<AuthModalState>((set) => ({
   isOpen: false,
   showAuthModal: () => set({ isOpen: true }),
   hideAuthModal: () => set({ isOpen: false }),
 }));
+
+export default useAuthModalState;

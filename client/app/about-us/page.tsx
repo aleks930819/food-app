@@ -7,7 +7,7 @@ import { YearlySummary } from '@/components/common';
 
 const AboutUsFeaturesItems = ({ icon, title, content }: { icon: React.ReactNode; title: string; content: string }) => {
   return (
-    <div className="flex flex-col rounded-md justify-center items-center gap-2 shadow-lg py-10 px-2 group hover:bg-secondary hover-duration-500 relative">
+    <div className="flex flex-col w-full rounded-md justify-center items-center gap-2 shadow-lg py-10 px-2 group hover:bg-secondary hover-duration-500 relative">
       <div className="bg-secondary icon-before mb-4  rounded-full p-4 text-white relative group-hover:text-secondary group-hover:bg-white hover-duration-500">
         {icon}
       </div>
@@ -29,7 +29,7 @@ const AboutUsPage = () => {
   return (
     <div>
       <div className="max-w-6xl mx-auto px-2 md:px-4 py-2 mt-10 flex-col-reverse md:flex-row flex items-center justify-center md:gap-10">
-        <div className="flex-1 grid grid-cols-2 gap-4  md:px-4 py-6">
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4  md:px-4 py-6">
           <AboutUsFeaturesItems
             icon={<Undo2 size={ICON_SIZE} />}
             title="Return Policy"

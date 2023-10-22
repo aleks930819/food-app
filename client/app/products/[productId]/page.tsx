@@ -1,9 +1,9 @@
-import { Heart, Minus, Plus, ShoppingCart } from 'lucide-react';
+import { Heart, Minus, Plus } from 'lucide-react';
 
 import { getProducts, getSingleProduct } from '@/actions';
 
 import NotFound from '@/app/not-found';
-import { ReviewStars } from '@/components/common';
+import { AddToCartButton, ReviewStars } from '@/components/common';
 import { Button, SocialIcons } from '@/components/ui';
 import { ProductCard, ProductGalleryImages } from '@/components/product';
 
@@ -62,15 +62,7 @@ const ProductDetailsPage = async ({
                   </button>
                 </div>
               </div>
-              <Button
-                variant="primary"
-                className="rounded-md  border-none m-auto md:ml-2 w-full md:w-auto flex items-center gap-2"
-              >
-                <span>
-                  <ShoppingCart size={20} />
-                </span>
-                <span>Add to Cart</span>
-              </Button>
+              <AddToCartButton product={product} />
             </div>
             <div className="flex items-center gap-4 mt-4 ">
               <Button variant="outline" className=" rounded-md w-full  md:w-auto flex items-center gap-2">

@@ -46,7 +46,7 @@ const Breadcrumb = ({ homeElement, capitalizeLinks }: TBreadCrumbProps) => {
         <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60" />
       </div>
 
-      <ul className="flex absolute  top-0 left-0 text-white  w-full h-full text-center justify-center">
+      <ul className="flex flex-wrap absolute  top-0 left-0 text-white  w-full h-full text-center justify-center">
         <li className="text-white text-lg mt-auto mb-auto   hover:text-primary-dark hover-duration-300 ease-in-out">
           <Link href={'/'}>{homeElement}</Link>
         </li>

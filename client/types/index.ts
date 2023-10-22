@@ -24,6 +24,7 @@ export interface Product {
   isArchived: boolean;
   createdAt: string;
   updatedAt: string;
+  cartItemQuantity: number;
   images: ProductImage[];
   category: Category;
 }

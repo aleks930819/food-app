@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 
 import { navLinks, LinkType } from '@/data/links';
 
 import HeaderCategories from './header-categories';
+import { CartButton } from '../cart';
 
 const BottomHeader = async () => {
   return (
@@ -27,15 +27,7 @@ const BottomHeader = async () => {
           </ul>
         </nav>
         {/* CART */}
-        <nav className="flex items-center gap-2">
-          <Link href="/cart" className="bg-primary-dark flex items-center gap-2 px-4 py-2 rounded-full">
-            <span className="font-bold flex items-center gap-2">
-              <ShoppingCart size={18} />
-              Cart
-            </span>
-            <span className="bg-white text-primary-dark rounded-full w-6 h-6 flex items-center justify-center">0</span>
-          </Link>
-        </nav>
+        <CartButton />
       </div>
     </div>
   );
