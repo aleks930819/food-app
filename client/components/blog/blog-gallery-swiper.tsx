@@ -74,7 +74,7 @@ const BlogGallerySwiper = ({ setShowModal, gallery }: BlogGallerySwiperProps) =>
                     width={450}
                     height={300}
                     key={image.id}
-                    className="object-cover relative w-full h-full"
+                    className="object-contain relative w-full h-full"
                   />
                 </div>
               </SwiperSlide>

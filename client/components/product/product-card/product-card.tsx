@@ -1,7 +1,8 @@
 import { Product } from '@/types';
-import { Eye, Heart, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ProductCardActions from './product-card-actions';
 
 interface ProductCardProps {
   product: Product;
@@ -10,7 +11,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link
-      data-testid="product-card"
+      data-test="product-card"
       href={`/products/${product.id}`}
       className="shadow-xl rounded-md overflow-hidden inline-block relative hover:shadow-2xl md:hover:-translate-y-2 transition-all duration-300 ease-in-out"
     >
@@ -29,15 +30,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <strong>${product.price}</strong>
         </p>
         {/* ACTIONS */}
-        <div className="flex w-full pt-4">
-          <button className="custom-background mr-auto rounded-full py-2 px-4 ">Add to cart</button>
-          <button className="custom-background w-11 h-11 flex items-center text-center mr-2 rounded-full ">
-            <Eye size={20} className="mx-auto" />
-          </button>
-          <button className="custom-background  rounded-full w-11 h-11 flex items-center text-center">
-            <Heart size={20} className="mx-auto" />
-          </button>
-        </div>
+        <ProductCardActions product={product} />
       </section>
 
       <span>

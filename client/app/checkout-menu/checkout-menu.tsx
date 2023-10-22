@@ -30,6 +30,7 @@ const CheckoutMenu = () => {
       )}
 
       <div
+        data-test="checkout-menu"
         ref={ref as any}
         className={`w-[90vw] sm:w-[55vw] md:w-[45vw] xl:w-[25vw] z-50
         fixed h-screen flex flex-col  justify-between px-3 bg-white  top-0 right-0 transition duration-500 ease-in-out transform overflow-y-auto ${
@@ -38,7 +39,7 @@ const CheckoutMenu = () => {
       >
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold text-black text-start pt-10 pb-10">Cart</h2>
-          <button className="text-black" onClick={hideCheckoutMenu}>
+          <button data-test="checkout-menu-close-button" className="text-black" onClick={hideCheckoutMenu}>
             <X size={24} />
           </button>
         </div>

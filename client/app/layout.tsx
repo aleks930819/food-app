@@ -24,15 +24,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CookieConsentProvider>
-          <Toaster position="bottom-center" />
-          <Header />
-          <Breadcrumb homeElement={'Home'} capitalizeLinks />
-          <main>{children}</main>
-          <ScrollToTopButton />
-          <AuthForm />
-          <Footer />
-        </CookieConsentProvider>
+        {/* <CookieConsentProvider> */}
+        <Toaster position="bottom-center" />
+        <Header />
+        <Breadcrumb homeElement={'Home'} capitalizeLinks />
+        <main>{children}</main>
+        <ScrollToTopButton />
+        <AuthForm />
+        <Footer />
+        {/* </CookieConsentProvider> */}
       </body>
     </html>
   );
