@@ -14,7 +14,7 @@ const ChecoutPriceSummary = () => {
           </p>
           <p className="text-black">
             <strong>
-              {cartTotal.toFixed(2)} <span>лв.</span>
+              <span>$</span> {cartTotal.toFixed(2)}
             </strong>
           </p>
         </div>
@@ -36,7 +36,8 @@ const ChecoutPriceSummary = () => {
         </p>
         <p className="text-xl  font-bold text-black">
           <strong>
-            {cartTotal.toFixed(2)} <span>лв.</span>
+            <span>$</span>
+            {cartTotal.toFixed(2)}
           </strong>
         </p>
       </div>

@@ -34,7 +34,8 @@ const CheckoutItems = () => {
 
             <p>
               <strong>
-                {Number(item.price).toFixed(2)} <span>лв.</span>
+                <span>$</span>
+                {Number(item.price).toFixed(2)}
               </strong>
             </p>
           </li>
