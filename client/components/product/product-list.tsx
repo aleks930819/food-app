@@ -16,6 +16,7 @@ const ProductList = ({ product }: { product: Product }) => {
           alt={product.name}
           width={300}
           height={240}
+          loading="eager"
           className="w-full h-full object-cover"
         />
       </div>

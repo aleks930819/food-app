@@ -10,6 +10,12 @@ import { Pagination } from 'swiper/modules';
 
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
+import man1 from '@/public/images/our-team/man-5.jpg';
+import man2 from '@/public/images/our-team/man-2.jpg';
+import man4 from '@/public/images/our-team/man-4.jpg';
+import man5 from '@/public/images/our-team/man-5.jpg';
+import woman from '@/public/images/our-team/woman-1.jpg';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -18,38 +24,27 @@ const OurTeamData = [
   {
     name: 'John Doe',
     title: 'Farmer',
-    image:
-      'https://images.unsplash.com/photo-1626029322280-ba48ba381345?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80',
+    image: man1,
   },
   {
     name: 'Alisa Doe',
     title: 'Farmer',
-    image:
-      'https://images.unsplash.com/photo-1589876568181-a1508b8ef473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80',
+    image: woman,
   },
   {
     name: 'Dave Doe',
     title: 'Farmer',
-    image:
-      'https://images.unsplash.com/photo-1601112625284-31170fd7844f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: man2,
+  },
+  {
+    name: 'Ivan Doe',
+    title: 'Farmer',
+    image: man4,
   },
   {
     name: 'Kristina Doe',
     title: 'Farmer',
-    image:
-      'https://images.unsplash.com/photo-1602046747040-1df0f6527803?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
-  },
-  {
-    name: 'Kristina Doe',
-    title: 'Farmer',
-    image:
-      'https://images.unsplash.com/photo-1602046747040-1df0f6527803?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
-  },
-  {
-    name: 'Kristina Doe',
-    title: 'Farmer',
-    image:
-      'https://images.unsplash.com/photo-1602046747040-1df0f6527803?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
+    image: man5,
   },
 ];
 
@@ -86,8 +81,8 @@ const OurTeam = () => {
                 src={member.image}
                 alt={member.name}
                 className="w-full h-full object-cover"
-                width={700}
-                height={700}
+                width={550}
+                height={450}
                 loading="lazy"
               />
 

@@ -45,6 +45,7 @@ const ProductCardBig = ({ product }: { product: Product }) => {
               alt={product.name}
               width={450}
               height={350}
+              loading="eager"
               className="w-full h-full object-cover"
             />
           </div>

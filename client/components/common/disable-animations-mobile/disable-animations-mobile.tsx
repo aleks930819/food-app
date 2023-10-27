@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { Children, cloneElement, isValidElement } from "react";
-import { useWindowSize } from "@uidotdev/usehooks";
-import { AnimationProps } from "framer-motion";
+import { Children, cloneElement, isValidElement } from 'react';
+import { useWindowSize } from '@uidotdev/usehooks';
+import { AnimationProps } from 'framer-motion';
 
 interface DisableAnimationMobileProps {
   children: any;
@@ -10,6 +10,8 @@ interface DisableAnimationMobileProps {
 
 const DisableAnimationMobile = ({ children }: DisableAnimationMobileProps) => {
   const { width } = useWindowSize();
+
+  if (!width) return null;
 
   const isMobile = width! <= 768;
 
@@ -19,7 +21,7 @@ const DisableAnimationMobile = ({ children }: DisableAnimationMobileProps) => {
     if (!isValidElement(child)) return child;
 
     const emptyAnimationProps = {
-      animate: "defualt",
+      animate: 'defualt',
       intial: undefined,
       exit: undefined,
       transition: { duration: 0 },

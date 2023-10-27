@@ -6,14 +6,15 @@ import { useCheckoutMenuState } from '@/lib/state';
 import { useCartStore } from '@/lib/state';
 
 import { CheckoutMenu } from '@/components/checkout-menu';
+import { ClientOnly } from '@/components/common';
 
 const CartButton = () => {
   const showCheckoutMenu = useCheckoutMenuState((state) => state.showCheckoutMenu);
   const cart = useCartStore((state) => state.items);
 
   return (
-    <>
-      <nav className="flex items-center gap-2">
+    <ClientOnly>
+      <div className="flex items-center gap-2">
         <button
           data-test="cart-button"
           className="bg-primary-dark flex items-center gap-2 px-4 py-2 rounded-full"
@@ -30,9 +31,9 @@ const CartButton = () => {
             {cart.length}
           </span>
         </button>
-      </nav>
+      </div>
       <CheckoutMenu />
-    </>
+    </ClientOnly>
   );
 };
 

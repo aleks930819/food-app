@@ -20,6 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             src={product.images[0].url}
             alt={product.name}
             width={400}
+            loading="eager"
             height={270}
             className="object-cover w-full h-56 "
           />

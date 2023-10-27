@@ -9,6 +9,7 @@ import { motion, useInView } from 'framer-motion';
 import { Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { formatDateFn } from '@/utils';
+import { DisableAnimationMobile } from '../common';
 
 interface BlogCardProps {
   date: string;
