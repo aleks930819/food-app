@@ -1,7 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
+import React from 'react';
 import { Toaster } from 'react-hot-toast';
+
 const inter = Lexend({ subsets: ['latin'] });
 
 import { Header } from '@/components/header';
@@ -11,8 +13,6 @@ import { Breadcrumb } from '@/components/common';
 
 import { ScrollToTopButton } from '@/components/ui';
 import { AuthForm } from '@/components/auth';
-import { CookieConsentProvider } from '@/context';
-import React from 'react';
 
 export const metadata: Metadata = {
   title: 'NutriNosh',

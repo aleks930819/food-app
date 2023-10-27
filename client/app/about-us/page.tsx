@@ -29,7 +29,7 @@ const AboutUsPage = () => {
   return (
     <div>
       <div className="max-w-6xl mx-auto px-2 md:px-4 py-2 mt-10 flex-col-reverse md:flex-row flex items-center justify-center md:gap-10">
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4  md:px-4 py-6">
+        <div className="flex-1 grid grid-cols-2 gap-4  md:px-4 py-6">
           <AboutUsFeaturesItems
             icon={<Undo2 size={ICON_SIZE} />}
             title="Return Policy"
@@ -52,8 +52,10 @@ const AboutUsPage = () => {
             content="Lorem ipsum dolor sit amet "
           />
         </div>
-        <section className="flex-1  mb-auto py-10">
-          <em className="text-primary-light italic font-bold text-2xl mb-4 inline-block   pb-2">~ Why Choose Us? ~</em>
+        <section className="flex-1 text-center lg:text-start mb-auto py-10">
+          <em className="text-primary-light italic text-center font-bold text-2xl mb-4 inline-block pb-2">
+            ~ Why Choose Us? ~
+          </em>
           <h2 className="text-3xl font-bold mb-4">We do not buy from the open market & traders.</h2>
           <p className="mb-4 text-gray-600">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, reprehenderit perspiciatis dignissimos
