@@ -108,26 +108,22 @@ model Category {
 }
 
 model Wishlist {
-  id        String   @id @default(cuid())
-  userId    String
-  productId String
-  user      User     @relation(fields: [userId], references: [id])
-  product   Product  @relation(fields: [productId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id       String    @id @default(uuid())
+  user     User      @relation(fields: [userId], references: [id])
+  userId   String    @unique
+  products Product[]
 
   @@index([userId])
-  @@index([productId])
 }
 
 model User {
-  id         String     @id @default(cuid())
-  email      String     @unique
+  id         String    @id @default(cuid())
+  email      String    @unique
   password   String
   first_name String
   last_name  String
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
-  Wishlist   Wishlist[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
   Store      Store[]
+  Wishlist   Wishlist?
 }
